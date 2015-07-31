@@ -1,10 +1,16 @@
 library(dplyr)
-library(data.table)
+library(tools)
+write.tdelim <- function(x, file) {
+  write.table(x, file, sep="\t", row.names=F, fileEncoding="UTF-8", quote=F)
+}
 
+read.tdelim <- function(file) {
+  read.delim(file, stringsAsFactors = F, fileEncoding = "utf8")
+}
 
 load_faset <- function(fileName) {
-  t.base <- fread(fileName, header=TRUE, stringsAsFactors=FALSE)
-  t <- t.base %>% group_by(Target) %>% mutate(Rank=dense_rank(-n), Probability=round((1/(sum(n)/n)), 3))
+  t.base <- tbl_df(read.tdelim(fileName))
+  t <- t.base %>% group_by(Target) %>% mutate(Rank=dense_rank(-n), Rank_Max=rank(n, ties.method="max"), P=round((1/(sum(n)/n)), 3))
   return (t)
 }
 
@@ -24,5 +30,11 @@ faset_target_meta <- function(t, Target.name) {
 }
 
 
+Sys.setlocale("LC_CTYPE", "Turkish_Turkey.1254")
+Sys.setlocale("LC_COLLATE", "Turkish_Turkey.1254")
+#setwd('/data/frequency')
+filenames <- list.files(pattern='*.txt')
+names <- sapply(filenames, file_path_sans_ext)
+fs <- sapply(filenames, load_faset, simplify = F)
 
 

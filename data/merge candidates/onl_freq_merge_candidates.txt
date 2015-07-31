@@ -1,22 +1,15 @@
 Target	Assoc	n	Root	Root.n	Ratio
-altın	külçe	1	külçe	1	1.0
-altın	külçe 	1	külçe	1	0.91
 alıntı	tırnak	1	tırnak	1	1.0
-alıntı	tırnak işareti	2	tırnak	1	0.6
-alıntı	tırnak işareti 	1	tırnak	1	0.57
-alıntı	tırnak işareti	2	tırnak işareti	2	1.0
-alıntı	tırnak işareti 	1	tırnak işareti	2	0.97
+alıntı	tırnak işareti	3	tırnak	1	0.6
 alıntı	örnek	1	örnek	1	1.0
 alıntı	örnekleme	1	örnek	1	0.71
-asker	er	1	er	1	1.0
-asker	erkek	1	er	1	0.57
-asker	yeşil	8	yeşil	8	1.0
-asker	yeşil 	1	yeşil	8	0.91
+asker	er	3	er	3	1.0
+asker	erkek	1	er	3	0.57
 asker	zor	1	zor	1	1.0
 asker	zorlama	1	zor	1	0.6
 asker	zorluk	1	zor	1	0.67
 avuç	el	23	el	23	1.0
-avuç	el içi 	1	el	23	0.44
+avuç	el içi	1	el	23	0.5
 avuç	iç	1	iç	1	1.0
 avuç	içi	1	iç	1	0.8
 ayıp	görgü	1	görgü	1	1.0
@@ -33,10 +26,8 @@ bacak	kıl	1	kıl	1	1.0
 bacak	kıllı	2	kıl	1	0.75
 balık	Japon	1	Japon	1	1.0
 balık	Japon balığı	1	Japon	1	0.59
-barınak	hayvan	1	hayvan	1	1.0
-barınak	hayvan barınağı	1	hayvan	1	0.57
-barınak	yağmur	1	yağmur	1	1.0
-barınak	yağmur 	1	yağmur	1	0.92
+barınak	hayvan	13	hayvan	13	1.0
+barınak	hayvan barınağı	1	hayvan	13	0.57
 başıboş	aylak	5	aylak	5	1.0
 başıboş	aylaklık	1	aylak	5	0.77
 belge	imza	7	imza	7	1.0
@@ -45,10 +36,6 @@ belge	resmi	3	resmi	3	1.0
 belge	resmiyet	2	resmi	3	0.77
 bilişim	bilgi	1	bilgi	1	1.0
 bilişim	bilgisayar	11	bilgi	1	0.67
-boğa	burç	24	burç	24	1.0
-boğa	burç 	1	burç	24	0.89
-boğa	kırmızı	2	kırmızı	2	1.0
-boğa	kırmızı 	1	kırmızı	2	0.93
 boğa	kızgın	2	kızgın	2	1.0
 boğa	kızgınlık	2	kızgın	2	0.8
 büro	amir	1	amir	1	1.0
@@ -59,81 +46,54 @@ delik	boş	1	boş	1	1.0
 delik	boşluk	6	boş	1	0.67
 delik	kara	5	kara	5	1.0
 delik	kara delik	2	kara	5	0.57
-delik	pantolon	1	pantolon	1	1.0
-delik	pantolon 	1	pantolon	1	0.94
 dinamik	canlı	3	canlı	3	1.0
 dinamik	canlılık	1	canlı	3	0.77
-dinamik	enerji	1	enerji	1	1.0
-dinamik	enerjik	6	enerji	1	0.92
+dinamik	enerji	4	enerji	4	1.0
+dinamik	enerjik	6	enerji	4	0.92
 dinamik	genç	2	genç	2	1.0
-dinamik	genç gözüken kişi 	1	genç	2	0.36
+dinamik	genç gözüken kişi	1	genç	2	0.38
 dinamik	gençlik	1	genç	2	0.73
 dinamik	güç	2	güç	2	1.0
 dinamik	güçlü	2	güç	2	0.75
 dinamik	hareket	1	hareket	1	1.0
 dinamik	hareketli	4	hareket	1	0.88
-dizgin	dolu	1	dolu	1	1.0
-dizgin	dolu 	2	dolu	1	0.89
 duygulu	ağla	1	ağla	1	1.0
 duygulu	ağlak	2	ağla	1	0.89
-duygulu	ağlamak	5	ağla	1	0.73
-duygulu	ağlamak 	1	ağla	1	0.67
-duygulu	ağlamak	5	ağlamak	5	1.0
-duygulu	ağlamak 	1	ağlamak	5	0.93
+duygulu	ağlamak	6	ağla	1	0.73
 duygulu	his	3	his	3	1.0
-duygulu	hisli	1	his	3	0.75
-duygulu	hisli 	1	his	3	0.67
-duygulu	hisli	1	hisli	1	1.0
-duygulu	hisli 	1	hisli	1	0.91
+duygulu	hisli	2	his	3	0.75
 duygulu	kadın	1	kadın	1	1.0
 duygulu	kadınlar	1	kadın	1	0.77
 elem	göz	3	göz	3	1.0
 elem	gözyaşı	1	göz	3	0.6
-esinti	rüzgar	1	rüzgar	1	1.0
-esinti	rüzgar 	1	rüzgar	1	0.92
 esinti	serin	1	serin	1	1.0
 esinti	serinlik	2	serin	1	0.77
 ev	güven	1	güven	1	1.0
-ev	güvenli yer 	1	güven	1	0.59
+ev	güvenli yer	1	güven	1	0.62
 ev	rahat	1	rahat	1	1.0
 ev	rahatlık	1	rahat	1	0.77
 ev	sıcak	1	sıcak	1	1.0
-ev	sıcaklık 	1	sıcak	1	0.71
+ev	sıcaklık	1	sıcak	1	0.77
 eşya	mal	1	mal	1	1.0
 eşya	maliyet	1	mal	1	0.6
-gelin	beyaz	8	beyaz	8	1.0
-gelin	beyaz 	1	beyaz	8	0.91
-geçerlik	kabul	6	kabul	6	1.0
-geçerlik	kabul 	1	kabul	6	0.91
-geçerlik	kabul edilebilir	1	kabul	6	0.48
-geçerlik	kabul 	1	kabul 	1	1.0
-geçerlik	kabul edilebilir	1	kabul 	1	0.55
+geçerlik	kabul	7	kabul	7	1.0
+geçerlik	kabul edilebilir	1	kabul	7	0.48
 geçerlik	sınav	1	sınav	1	1.0
 geçerlik	sınav kaydı	1	sınav	1	0.62
 geçerlik	uygun	1	uygun	1	1.0
 geçerlik	uygunluk	1	uygun	1	0.77
 giysi	et	1	et	1	1.0
 giysi	etek	3	et	1	0.67
-gülüş	aşk	1	aşk	1	1.0
-gülüş	aşk 	1	aşk	1	0.86
 gülüş	mutlu	1	mutlu	1	1.0
-gülüş	mutluluk	1	mutlu	1	0.77
-gıcırtı	kapı	1	kapı	1	1.0
-gıcırtı	kapı 	2	kapı	1	0.89
+gülüş	mutluluk	14	mutlu	1	0.77
 hata	af	1	af	1	1.0
 hata	affedilmek	1	af	1	0.33
 hata	soru	1	soru	1	1.0
 hata	sorun	1	soru	1	0.89
-hata	yanlış	19	yanlış	19	1.0
-hata	yanlış 	1	yanlış	19	0.92
 hayat	aile	1	aile	1	1.0
 hayat	ailem	1	aile	1	0.89
-hayat	ağaç	1	ağaç	1	1.0
-hayat	ağaç 	1	ağaç	1	0.89
 hayvan	kedi	6	kedi	6	1.0
 hayvan	kedim	1	kedi	6	0.89
-hayvan	köpek	12	köpek	12	1.0
-hayvan	köpek 	1	köpek	12	0.91
 haz	cinsel	1	cinsel	1	1.0
 haz	cinsellik	2	cinsel	1	0.8
 haz	tat	1	tat	1	1.0
@@ -151,10 +111,6 @@ hukuk	hak	9	hak	9	1.0
 hukuk	hakim	3	hak	9	0.75
 hukuk	hakkını aramak	1	hak	9	0.35
 hukuk	haksız	1	hak	9	0.67
-hukuk	yasa	2	yasa	2	1.0
-hukuk	yasa 	1	yasa	2	0.89
-hüzün	ayrılık	1	ayrılık	1	1.0
-hüzün	ayrılık 	1	ayrılık	1	0.93
 hüzün	duygu	2	duygu	2	1.0
 hüzün	duygusal	1	duygu	2	0.77
 hüzün	mutsuz	2	mutsuz	2	1.0
@@ -202,12 +158,10 @@ katil	suç	1	suç	1	1.0
 katil	suçlu	3	suç	1	0.75
 kayıp	arama	1	arama	1	1.0
 kayıp	aramak	1	arama	1	0.91
-kuş	gökyüzü	1	gökyüzü	1	1.0
-kuş	gökyüzü 	1	gökyüzü	1	0.93
 kuş	muhabbet	1	muhabbet	1	1.0
 kuş	muhabbet kuşu	1	muhabbet	1	0.76
 kuş	özgür	5	özgür	5	1.0
-kuş	özgürlük	8	özgür	5	0.77
+kuş	özgürlük	9	özgür	5	0.77
 külhan	bey	18	bey	18	1.0
 külhan	beyi	2	bey	18	0.86
 külhan	beylice	1	bey	18	0.6
@@ -218,12 +172,8 @@ kırmızı	ateş	1	ateş	1	1.0
 kırmızı	ateşli	1	ateş	1	0.8
 lezzet	yemek	25	yemek	25	1.0
 lezzet	yemek yemek	1	yemek	25	0.62
-meraklı	Melahat	2	Melahat	2	1.0
-meraklı	Melahat 	1	Melahat	2	0.93
 meraklı	araştırma	1	araştırma	1	1.0
 meraklı	araştırmacı	2	araştırma	1	0.9
-meraklı	büyüteç	2	büyüteç	2	1.0
-meraklı	büyüteç 	1	büyüteç	2	0.93
 meraklı	göz	1	göz	1	1.0
 meraklı	gözlük	1	göz	1	0.67
 meraklı	şüphe	1	şüphe	1	1.0
@@ -234,10 +184,8 @@ mineral	gaz	1	gaz	1	1.0
 mineral	gazoz	1	gaz	1	0.75
 mineral	maden	1	maden	1	1.0
 mineral	maden suyu	1	maden	1	0.67
-mineral	soda	11	soda	11	1.0
-mineral	soda 	1	soda	11	0.89
-müftülük	din	1	din	1	1.0
-müftülük	dini	1	din	1	0.86
+müftülük	din	17	din	17	1.0
+müftülük	dini	1	din	17	0.86
 müftülük	imam	2	imam	2	1.0
 müftülük	imam nikahı	2	imam	2	0.53
 nezle	burun	7	burun	7	1.0
@@ -246,21 +194,14 @@ nezle	hasta	3	hasta	3	1.0
 nezle	hastalık	9	hasta	3	0.77
 para	güç	5	güç	5	1.0
 para	güçlülük	1	güç	5	0.55
-para	yeşil	3	yeşil	3	1.0
-para	yeşil 	1	yeşil	3	0.91
 para	zengin	1	zengin	1	1.0
-para	zenginlik	2	zengin	1	0.8
-para	zenginlik 	1	zengin	1	0.75
-para	zenginlik	2	zenginlik	2	1.0
-para	zenginlik 	1	zenginlik	2	0.95
+para	zenginlik	3	zengin	1	0.8
 parke	kaygan	1	kaygan	1	1.0
 parke	kayganlık	1	kaygan	1	0.8
-paslı	demir	1	demir	1	1.0
-paslı	demir 	1	demir	1	0.91
 paslı	küf	1	küf	1	1.0
 paslı	küflü	1	küf	1	0.75
 paslı	yağ	1	yağ	1	1.0
-paslı	yağmur 	1	yağ	1	0.6
+paslı	yağmur	1	yağ	1	0.67
 pencere	kar	2	kar	2	1.0
 pencere	karşı	2	kar	2	0.75
 peşinatsız	kredi	6	kredi	6	1.0
@@ -268,20 +209,13 @@ peşinatsız	kredi kartı	2	kredi	6	0.62
 peşinatsız	kredisiz	1	kredi	6	0.77
 peşinatsız	taksit	7	taksit	7	1.0
 peşinatsız	taksitsiz	2	taksit	7	0.8
-peşinatsız	vade	1	vade	1	1.0
-peşinatsız	vade 	1	vade	1	0.89
-peşinatsız	vade farksız	1	vade	1	0.5
-peşinatsız	vadesiz	1	vade	1	0.73
-peşinatsız	vade 	1	vade 	1	1.0
-peşinatsız	vade farksız	1	vade 	1	0.59
-pomat	krem	10	krem	10	1.0
-pomat	krem 	1	krem	10	0.89
+peşinatsız	vade	5	vade	5	1.0
+peşinatsız	vade farksız	1	vade	5	0.5
+peşinatsız	vadesiz	1	vade	5	0.73
 radyo	eski	2	eski	2	1.0
 radyo	eski zamanlar	1	eski	2	0.47
 radyo	program	2	program	2	1.0
 radyo	programı	1	program	2	0.93
-sadık	eş	4	eş	4	1.0
-sadık	eş 	1	eş	4	0.8
 sadık	güven	3	güven	3	1.0
 sadık	güvenilir	4	güven	3	0.71
 sadık	sadakat	2	sadakat	2	1.0
@@ -294,20 +228,15 @@ sadık	sevgilim	1	sevgili	3	0.93
 sazlık	ot	7	ot	7	1.0
 sazlık	otlak	2	ot	7	0.57
 sazlık	saman	3	saman	3	1.0
-sazlık	samanlık 	1	saman	3	0.71
+sazlık	samanlık	1	saman	3	0.77
 sofra	masa	6	masa	6	1.0
 sofra	masa örtüsü	1	masa	6	0.53
 sofra	tuz	3	tuz	3	1.0
 sofra	tuzu	1	tuz	3	0.86
-solo	gitar	2	gitar	2	1.0
-solo	gitar 	1	gitar	2	0.91
-solo	tek	11	tek	11	1.0
-solo	tek 	1	tek	11	0.86
-solo	yalnız	1	yalnız	1	1.0
-solo	yalnız 	1	yalnız	1	0.92
-solo	yalnızlık	1	yalnız	1	0.8
+solo	yalnız	2	yalnız	2	1.0
+solo	yalnızlık	1	yalnız	2	0.8
 soğan	göz	2	göz	2	1.0
-soğan	gözyaşı	1	göz	2	0.6
+soğan	gözyaşı	10	göz	2	0.6
 soğan	yaş	1	yaş	1	1.0
 soğan	yaşarmak	1	yaş	1	0.55
 suç	ceza	26	ceza	26	1.0
@@ -318,16 +247,11 @@ süresiz	rahat	2	rahat	2	1.0
 süresiz	rahatlık	1	rahat	2	0.77
 süresiz	sınır	2	sınır	2	1.0
 süresiz	sınırsız	9	sınır	2	0.77
-takoz	ayakkabı	5	ayakkabı	5	1.0
-takoz	ayakkabı 	1	ayakkabı	5	0.94
 tane	bir	1	bir	1	1.0
-tane	bir üzüm	1	bir	1	0.55
 tane	birim	1	bir	1	0.75
 tane	kar	8	kar	8	1.0
 tane	karabiber	1	kar	8	0.5
 tane	karpuz	1	kar	8	0.67
-tane	üzüm	6	üzüm	6	1.0
-tane	üzüm 	1	üzüm	6	0.89
 tanıtım	film	2	film	2	1.0
 tanıtım	filmi	1	film	2	0.89
 televizyon	haber	1	haber	1	1.0
@@ -335,7 +259,7 @@ televizyon	haberler	2	haber	1	0.77
 toz	kir	4	kir	4	1.0
 toz	kirli	1	kir	4	0.75
 toz	pis	2	pis	2	1.0
-toz	pislik	1	pis	2	0.67
+toz	pislik	4	pis	2	0.67
 uçak	hava	5	hava	5	1.0
 uçak	havaalanı	2	hava	5	0.62
 uçak	havalimanı	1	hava	5	0.57
@@ -346,11 +270,9 @@ vali	başkan	1	baş	1	0.67
 vali	kar	2	kar	2	1.0
 vali	kar tatili	1	kar	2	0.46
 vali	İstanbul	1	İstanbul	1	1.0
-vali	İstanbul valisi 	1	İstanbul	1	0.67
-virüs	bilgisayar	9	bilgisayar	9	1.0
-virüs	bilgisayar 	1	bilgisayar	9	0.95
+vali	İstanbul valisi	1	İstanbul	1	0.7
 virüs	hasta	1	hasta	1	1.0
-virüs	hastalık	1	hasta	1	0.77
+virüs	hastalık	15	hasta	1	0.77
 yama	dikme	1	dikme	1	1.0
 yama	dikmek	1	dikme	1	0.91
 yama	fakir	1	fakir	1	1.0
@@ -377,15 +299,11 @@ zaman	hız	2	hız	2	1.0
 zaman	hızlı	1	hız	2	0.75
 çehre	güzel	1	güzel	1	1.0
 çehre	güzellik	3	güzel	1	0.77
-övgü	alkış	1	alkış	1	1.0
-övgü	alkış 	1	alkış	1	0.91
 özet	ders	2	ders	2	1.0
 özet	ders çalışmak	1	ders	2	0.47
 özet	kısa	17	kısa	17	1.0
 özet	kısaca	1	kısa	17	0.8
 özet	kısaltma	2	kısa	17	0.67
-özet	sınav	2	sınav	2	1.0
-özet	sınav 	1	sınav	2	0.91
 özlem	uzak	3	uzak	3	1.0
 özlem	uzaklık	1	uzak	3	0.73
 şiddetli	savaş	1	savaş	1	1.0
