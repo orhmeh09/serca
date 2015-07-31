@@ -16,7 +16,7 @@ SubjectID	Target	Assoc
 3960388073	sofra	yemek
 3960354471	sofra	yemek
 3959674601	sofra	ekmek
-3959536556	sofra	peçete 
+3959536556	sofra	peçete
 3958892469	sofra	tuz
 3958478795	sofra	ramazan
 3958153417	sofra	bezi
@@ -43,11 +43,11 @@ SubjectID	Target	Assoc
 3954204193	sofra	tuz
 3954178309	sofra	yemek
 3954173294	sofra	yemek
-3954169220	sofra	bir ziyafet
+3954169220	sofra	ziyafet
 3954143297	sofra	yemek
 3954143132	sofra	masa
 3954142836	sofra	ekmek
-3954103511	sofra	beraberlik 
+3954103511	sofra	beraberlik
 3954097659	sofra	yemek
 3954038614	sofra	aile
 3954028957	sofra	yemek
@@ -95,7 +95,7 @@ SubjectID	Target	Assoc
 3954204193	suç	mahal
 3954178309	suç	ceza
 3954173294	suç	polis
-3954169220	suç	bir adliye
+3954169220	suç	adliye
 3954143297	suç	ceza
 3954143132	suç	suçlu
 3954142836	suç	katil
@@ -199,7 +199,7 @@ SubjectID	Target	Assoc
 3954204193	nezle	burun
 3954178309	nezle	ıhlamur
 3954173294	nezle	grip
-3954169220	nezle	bir mendil
+3954169220	nezle	mendil
 3954143297	nezle	hastalık
 3954143132	nezle	grip
 3954142836	nezle	akıntı
@@ -224,7 +224,7 @@ SubjectID	Target	Assoc
 3960388073	özlem	uzak
 3960354471	özlem	duygu
 3959674601	özlem	hasret
-3959536556	özlem	hava alanı 
+3959536556	özlem	hava alanı
 3958892469	özlem	hasret
 3958478795	özlem	sevgi
 3958153417	özlem	hasret
@@ -251,7 +251,7 @@ SubjectID	Target	Assoc
 3954204193	özlem	apartman
 3954178309	özlem	sevilen
 3954173294	özlem	memleket
-3954169220	özlem	bir aile
+3954169220	özlem	aile
 3954143297	özlem	kavuşma
 3954143132	özlem	aşk
 3954142836	özlem	sevgi
@@ -328,9 +328,9 @@ SubjectID	Target	Assoc
 3960388073	iğde	yiyecek
 3960354471	iğde	iplik
 3959674601	iğde	yeşil
-3959536556	iğde	soğuk 
+3959536556	iğde	soğuk
 3958892469	iğde	ağaç
-3958478795	iğde	tespih 
+3958478795	iğde	tespih
 3958153417	iğde	bitki
 3957969296	iğde	ağaç
 3957517953	iğde	ağaç
@@ -355,7 +355,7 @@ SubjectID	Target	Assoc
 3954204193	iğde	Aksaray
 3954178309	iğde	ada
 3954173294	iğde	?
-3954169220	iğde	bir sarı ot
+3954169220	iğde	sarı ot
 3954143297	iğde	meyve
 3954143132	iğde	?
 3954142836	iğde	iğne
@@ -378,7 +378,7 @@ SubjectID	Target	Assoc
 3961058558	vali	kar
 3960919691	vali	bursa
 3960388073	vali	yönetim
-3960354471	vali	İstanbul valisi 
+3960354471	vali	İstanbul valisi
 3959674601	vali	adam
 3959536556	vali	devlet
 3958892469	vali	kaymakam
@@ -407,7 +407,7 @@ SubjectID	Target	Assoc
 3954204193	vali	mutsuz
 3954178309	vali	tatil
 3954173294	vali	şehir
-3954169220	vali	bir oy
+3954169220	vali	oy
 3954143297	vali	yönetici
 3954143132	vali	makam
 3954142836	vali	baş
@@ -459,7 +459,7 @@ SubjectID	Target	Assoc
 3954204193	metal	gıcırtı
 3954178309	metal	şarkı türü
 3954173294	metal	kaşık
-3954169220	metal	bir çatal
+3954169220	metal	çatal
 3954143297	metal	müzik
 3954143132	metal	demir
 3954142836	metal	kimya
@@ -484,8 +484,8 @@ SubjectID	Target	Assoc
 3960388073	peşinatsız	?
 3960354471	peşinatsız	hükümsüz
 3959674601	peşinatsız	vade
-3959536556	peşinatsız	çek 
-3958892469	peşinatsız	vade 
+3959536556	peşinatsız	çek
+3958892469	peşinatsız	vade
 3958478795	peşinatsız	vade farksız
 3958153417	peşinatsız	sonra
 3957969296	peşinatsız	ödeme
@@ -511,7 +511,7 @@ SubjectID	Target	Assoc
 3954204193	peşinatsız	Bellona
 3954178309	peşinatsız	kredi
 3954173294	peşinatsız	nakit
-3954169220	peşinatsız	bir vade
+3954169220	peşinatsız	vade
 3954143297	peşinatsız	kredi kartı
 3954143132	peşinatsız	taksitsiz
 3954142836	peşinatsız	net
@@ -563,7 +563,7 @@ SubjectID	Target	Assoc
 3954204193	inanç	yalan
 3954178309	inanç	özgürlük
 3954173294	inanç	din
-3954169220	inanç	bir din
+3954169220	inanç	din
 3954143297	inanç	güven
 3954143132	inanç	din
 3954142836	inanç	tanrı
@@ -586,7 +586,7 @@ SubjectID	Target	Assoc
 3961058558	çömlek	et
 3960919691	çömlek	Kapadokya
 3960388073	çömlek	seramik
-3960354471	çömlek	turuncu toprak 
+3960354471	çömlek	turuncu toprak
 3959674601	çömlek	toprak
 3959536556	çömlek	kil
 3958892469	çömlek	çanak
@@ -615,7 +615,7 @@ SubjectID	Target	Assoc
 3954204193	çömlek	Avanos
 3954178309	çömlek	güveç
 3954173294	çömlek	çanak
-3954169220	çömlek	bir körebe oyunu
+3954169220	çömlek	körebe oyunu
 3954143297	çömlek	toprak
 3954143132	çömlek	çamur
 3954142836	çömlek	uğraş
@@ -640,7 +640,7 @@ SubjectID	Target	Assoc
 3960388073	kapı	gıcırtı
 3960354471	kapı	çıkış
 3959674601	kapı	duvar
-3959536556	kapı	ahşap 
+3959536556	kapı	ahşap
 3958892469	kapı	tokmak
 3958478795	kapı	meydan okuma
 3958153417	kapı	kolu
@@ -667,7 +667,7 @@ SubjectID	Target	Assoc
 3954204193	kapı	çarpmak
 3954178309	kapı	kapı tokmağı
 3954173294	kapı	giriş
-3954169220	kapı	bir ev
+3954169220	kapı	ev
 3954143297	kapı	anahtar
 3954143132	kapı	oda
 3954142836	kapı	duvar
@@ -719,11 +719,11 @@ SubjectID	Target	Assoc
 3954204193	tane	üzüm
 3954178309	tane	nar
 3954173294	tane	karpuz
-3954169220	tane	bir üzüm
+3954169220	tane	üzüm
 3954143297	tane	bir
 3954143132	tane	adet
 3954142836	tane	nar
-3954103511	tane	üzüm 
+3954103511	tane	üzüm
 3954097659	tane	kar
 3954038614	tane	adet
 3954028957	tane	tek
@@ -746,7 +746,7 @@ SubjectID	Target	Assoc
 3959674601	mineral	enerji
 3959536556	mineral	kaya
 3958892469	mineral	vitamin
-3958478795	mineral	soda 
+3958478795	mineral	soda
 3958153417	mineral	besin
 3957969296	mineral	soda
 3957517953	mineral	su
@@ -771,7 +771,7 @@ SubjectID	Target	Assoc
 3954204193	mineral	gaz
 3954178309	mineral	maden suyu
 3954173294	mineral	soda
-3954169220	mineral	bir su
+3954169220	mineral	su
 3954143297	mineral	su
 3954143132	mineral	su
 3954142836	mineral	soda
@@ -823,7 +823,7 @@ SubjectID	Target	Assoc
 3954204193	televizyon	boşluk
 3954178309	televizyon	haberler
 3954173294	televizyon	ünlü
-3954169220	televizyon	bir reklam
+3954169220	televizyon	reklam
 3954143297	televizyon	kanal
 3954143132	televizyon	dizi
 3954142836	televizyon	sıkılmak
@@ -875,7 +875,7 @@ SubjectID	Target	Assoc
 3954204193	başıboş	avare
 3954178309	başıboş	serseri
 3954173294	başıboş	köpek
-3954169220	başıboş	bir insan
+3954169220	başıboş	insan
 3954143297	başıboş	serbest
 3954143132	başıboş	amaçsız
 3954142836	başıboş	köpek
@@ -900,7 +900,7 @@ SubjectID	Target	Assoc
 3960388073	kuş	ağaç
 3960354471	kuş	özgürlük
 3959674601	kuş	kanat
-3959536556	kuş	gökyüzü 
+3959536556	kuş	gökyüzü
 3958892469	kuş	kelaynak
 3958478795	kuş	özgürlük
 3958153417	kuş	uçmak
@@ -927,7 +927,7 @@ SubjectID	Target	Assoc
 3954204193	kuş	özgür
 3954178309	kuş	muhabbet kuşu
 3954173294	kuş	özgür
-3954169220	kuş	bir özgürlük
+3954169220	kuş	özgürlük
 3954143297	kuş	uçmak
 3954143132	kuş	özgür
 3954142836	kuş	özgürlük
@@ -940,7 +940,7 @@ SubjectID	Target	Assoc
 3975297560	geçerlik	kabul
 3973880269	geçerlik	limit
 3970313078	geçerlik	kalıcı
-3969147097	geçerlik	kabul 
+3969147097	geçerlik	kabul
 3968662250	geçerlik	süre
 3968240808	geçerlik	izin
 3967284794	geçerlik	geçerlilik
@@ -979,7 +979,7 @@ SubjectID	Target	Assoc
 3954204193	geçerlik	uygun
 3954178309	geçerlik	sınav kaydı
 3954173294	geçerlik	okul
-3954169220	geçerlik	bir ödev
+3954169220	geçerlik	ödev
 3954143297	geçerlik	geçersiz
 3954143132	geçerlik	kabul edilebilir
 3954142836	geçerlik	kanıt
@@ -1005,7 +1005,7 @@ SubjectID	Target	Assoc
 3960354471	hukuk	adalet
 3959674601	hukuk	law
 3959536556	hukuk	avukat
-3958892469	hukuk	yasa 
+3958892469	hukuk	yasa
 3958478795	hukuk	Dolapdere
 3958153417	hukuk	kural
 3957969296	hukuk	dava
@@ -1031,7 +1031,7 @@ SubjectID	Target	Assoc
 3954204193	hukuk	haksız
 3954178309	hukuk	hakkını aramak
 3954173294	hukuk	anayasa
-3954169220	hukuk	bir anayasa
+3954169220	hukuk	anayasa
 3954143297	hukuk	adalet
 3954143132	hukuk	hak
 3954142836	hukuk	hak
@@ -1083,7 +1083,7 @@ SubjectID	Target	Assoc
 3954204193	kayıp	köpek
 3954178309	kayıp	ölüm
 3954173294	kayıp	kadın
-3954169220	kayıp	bir akraba
+3954169220	kayıp	akraba
 3954143297	kayıp	bulmak
 3954143132	kayıp	üzüntü
 3954142836	kayıp	üzüntü
@@ -1135,7 +1135,7 @@ SubjectID	Target	Assoc
 3954204193	yüzük	parmak
 3954178309	yüzük	evlilik
 3954173294	yüzük	parmak
-3954169220	yüzük	bir evlilik
+3954169220	yüzük	evlilik
 3954143297	yüzük	alyans
 3954143132	yüzük	evlilik
 3954142836	yüzük	evlilik
@@ -1160,7 +1160,7 @@ SubjectID	Target	Assoc
 3960388073	vatan	Türkiye
 3960354471	vatan	Türkiye
 3959674601	vatan	tannnn
-3959536556	vatan	savaş 
+3959536556	vatan	savaş
 3958892469	vatan	millet
 3958478795	vatan	millet
 3958153417	vatan	millet
@@ -1187,7 +1187,7 @@ SubjectID	Target	Assoc
 3954204193	vatan	Sakarya
 3954178309	vatan	millet
 3954173294	vatan	milliyet
-3954169220	vatan	bir yuva
+3954169220	vatan	yuva
 3954143297	vatan	ülke
 3954143132	vatan	asker
 3954142836	vatan	sınır
@@ -1212,7 +1212,7 @@ SubjectID	Target	Assoc
 3960388073	gülüş	mutluluk
 3960354471	gülüş	samimiyet
 3959674601	gülüş	diş
-3959536556	gülüş	aşk 
+3959536556	gülüş	aşk
 3958892469	gülüş	gülümseme
 3958478795	gülüş	samimiyet
 3958153417	gülüş	ağlayış
@@ -1239,7 +1239,7 @@ SubjectID	Target	Assoc
 3954204193	gülüş	gamze
 3954178309	gülüş	tebessüm
 3954173294	gülüş	mutluluk
-3954169220	gülüş	bir mutluluk
+3954169220	gülüş	mutluluk
 3954143297	gülüş	mutlu
 3954143132	gülüş	mutluluk
 3954142836	gülüş	diş
@@ -1291,7 +1291,7 @@ SubjectID	Target	Assoc
 3954204193	giysi	kırmızı
 3954178309	giysi	moda
 3954173294	giysi	moda
-3954169220	giysi	bir alışveriş
+3954169220	giysi	alışveriş
 3954143297	giysi	kıyafet
 3954143132	giysi	kıyafet
 3954142836	giysi	elbise
@@ -1316,7 +1316,7 @@ SubjectID	Target	Assoc
 3960388073	eşya	anahtar
 3960354471	eşya	gereklilik
 3959674601	eşya	kütüphane
-3959536556	eşya	mağaza 
+3959536556	eşya	mağaza
 3958892469	eşya	çanta
 3958478795	eşya	mobilya
 3958153417	eşya	ev
@@ -1343,7 +1343,7 @@ SubjectID	Target	Assoc
 3954204193	eşya	eski
 3954178309	eşya	ihtiyaç
 3954173294	eşya	ev
-3954169220	eşya	bir değerli
+3954169220	eşya	değerli
 3954143297	eşya	maddi
 3954143132	eşya	koltuk
 3954142836	eşya	telefon
@@ -1366,7 +1366,7 @@ SubjectID	Target	Assoc
 3961058558	dizgin	?
 3960919691	dizgin	at
 3960388073	dizgin	?
-3960354471	dizgin	dolu 
+3960354471	dizgin	dolu
 3959674601	dizgin	ip
 3959536556	dizgin	at
 3958892469	dizgin	dolu
@@ -1395,14 +1395,14 @@ SubjectID	Target	Assoc
 3954204193	dizgin	dolu
 3954178309	dizgin	at
 3954173294	dizgin	dolu
-3954169220	dizgin	bir dolu
+3954169220	dizgin	dolu
 3954143297	dizgin	at
 3954143132	dizgin	at
 3954142836	dizgin	sakin
 3954103511	dizgin	at
 3954097659	dizgin	dolu
 3954038614	dizgin	dolu
-3954028957	dizgin	dolu 
+3954028957	dizgin	dolu
 3978999276	soğan	gözyaşı
 3975627654	soğan	koku
 3975297560	soğan	kötü koku
@@ -1447,7 +1447,7 @@ SubjectID	Target	Assoc
 3954204193	soğan	iki
 3954178309	soğan	cücük
 3954173294	soğan	gözyaşı
-3954169220	soğan	bir gözyaşı
+3954169220	soğan	gözyaşı
 3954143297	soğan	koku
 3954143132	soğan	yemek
 3954142836	soğan	koku
@@ -1499,7 +1499,7 @@ SubjectID	Target	Assoc
 3954204193	parke	cila
 3954178309	parke	ahşap
 3954173294	parke	ev
-3954169220	parke	bir laminant
+3954169220	parke	laminant
 3954143297	parke	yer
 3954143132	parke	fayans
 3954142836	parke	beyaz
@@ -1551,7 +1551,7 @@ SubjectID	Target	Assoc
 3954204193	radyo	frekans
 3954178309	radyo	şarkı
 3954173294	radyo	araba
-3954169220	radyo	bir kanal
+3954169220	radyo	kanal
 3954143297	radyo	kanal
 3954143132	radyo	müzik
 3954142836	radyo	eski
@@ -1603,7 +1603,7 @@ SubjectID	Target	Assoc
 3954204193	tabanca	karınca
 3954178309	tabanca	mermi
 3954173294	tabanca	kurşun
-3954169220	tabanca	bir kurun
+3954169220	tabanca	kurun
 3954143297	tabanca	silah
 3954143132	tabanca	silah
 3954142836	tabanca	ölüm
@@ -1655,7 +1655,7 @@ SubjectID	Target	Assoc
 3954204193	serin	Kalebodur
 3954178309	serin	limonata
 3954173294	serin	soğuk
-3954169220	serin	bir yayla
+3954169220	serin	yayla
 3954143297	serin	ferah
 3954143132	serin	soğuk
 3954142836	serin	sakin
@@ -1680,7 +1680,7 @@ SubjectID	Target	Assoc
 3960388073	övgü	mutluluk
 3960354471	övgü	memnuniyet
 3959674601	övgü	praise
-3959536556	övgü	alkış 
+3959536556	övgü	alkış
 3958892469	övgü	yergi
 3958478795	övgü	patron
 3958153417	övgü	?
@@ -1707,8 +1707,8 @@ SubjectID	Target	Assoc
 3954204193	övgü	karne
 3954178309	övgü	başarı
 3954173294	övgü	methetmek
-3954169220	övgü	bir memnuniyet
-3954143297	övgü	mütevazı 
+3954169220	övgü	memnuniyet
+3954143297	övgü	mütevazı
 3954143132	övgü	başarı
 3954142836	övgü	iltifat
 3954103511	övgü	gurur
@@ -1759,7 +1759,7 @@ SubjectID	Target	Assoc
 3954204193	balık	göz
 3954178309	balık	burç
 3954173294	balık	somon
-3954169220	balık	bir rakı
+3954169220	balık	rakı
 3954143297	balık	burç
 3954143132	balık	deniz
 3954142836	balık	sazan
@@ -1811,7 +1811,7 @@ SubjectID	Target	Assoc
 3954204193	hoşnut	rüzgar
 3954178309	hoşnut	misafir
 3954173294	hoşnut	memnun
-3954169220	hoşnut	bir güzellik
+3954169220	hoşnut	güzellik
 3954143297	hoşnut	memnun
 3954143132	hoşnut	mutlu
 3954142836	hoşnut	keyif
@@ -1834,7 +1834,7 @@ SubjectID	Target	Assoc
 3961058558	ayıp	görgüsüzlük
 3960919691	ayıp	yasak
 3960388073	ayıp	?
-3960354471	ayıp	sesli sakız patlatmak 
+3960354471	ayıp	sesli sakız patlatmak
 3959674601	ayıp	kötü
 3959536556	ayıp	ahlak
 3958892469	ayıp	günah
@@ -1863,7 +1863,7 @@ SubjectID	Target	Assoc
 3954204193	ayıp	günah
 3954178309	ayıp	küfür
 3954173294	ayıp	yanlış
-3954169220	ayıp	bir yaşlı
+3954169220	ayıp	yaşlı
 3954143297	ayıp	görgü
 3954143132	ayıp	yargılanan
 3954142836	ayıp	yalan
@@ -1915,7 +1915,7 @@ SubjectID	Target	Assoc
 3954204193	iyilik	hoşluk
 3954178309	iyilik	merhamet
 3954173294	iyilik	kötülük
-3954169220	iyilik	bir karşılıksız
+3954169220	iyilik	karşılıksız
 3954143297	iyilik	yardim
 3954143132	iyilik	iyi
 3954142836	iyilik	anne
@@ -1990,7 +1990,7 @@ SubjectID	Target	Assoc
 3961058558	çehre	ifade
 3960919691	çehre	unutulmak
 3960388073	çehre	yüz
-3960354471	çehre	bilmiyorum 
+3960354471	çehre	bilmiyorum
 3959674601	çehre	yüz
 3959536556	çehre	kader
 3958892469	çehre	surat
@@ -2019,7 +2019,7 @@ SubjectID	Target	Assoc
 3954204193	çehre	güzel
 3954178309	çehre	güzellik
 3954173294	çehre	yüz
-3954169220	çehre	bir ünlü
+3954169220	çehre	ünlü
 3954143297	çehre	yüz
 3954143132	çehre	yüz
 3954142836	çehre	göz
@@ -2044,9 +2044,9 @@ SubjectID	Target	Assoc
 3960388073	hayat	olum
 3960354471	hayat	ailem
 3959674601	hayat	neşe
-3959536556	hayat	ağaç 
+3959536556	hayat	ağaç
 3958892469	hayat	nefes
-3958478795	hayat	dinamik 
+3958478795	hayat	dinamik
 3958153417	hayat	yaşam
 3957969296	hayat	yeşil
 3957517953	hayat	ömür
@@ -2071,7 +2071,7 @@ SubjectID	Target	Assoc
 3954204193	hayat	memat
 3954178309	hayat	kısa
 3954173294	hayat	yaşam
-3954169220	hayat	bir sonsuzluk
+3954169220	hayat	sonsuzluk
 3954143297	hayat	çaba
 3954143132	hayat	yaşam
 3954142836	hayat	ölüm
@@ -2096,7 +2096,7 @@ SubjectID	Target	Assoc
 3960388073	barınak	yavru kopek
 3960354471	barınak	hayvan barınağı
 3959674601	barınak	ev
-3959536556	barınak	yağmur 
+3959536556	barınak	yağmur
 3958892469	barınak	hayvan
 3958478795	barınak	sığınak
 3958153417	barınak	sığınak
@@ -2123,7 +2123,7 @@ SubjectID	Target	Assoc
 3954204193	barınak	kedi
 3954178309	barınak	ev
 3954173294	barınak	ev
-3954169220	barınak	bir hayvan
+3954169220	barınak	hayvan
 3954143297	barınak	hayvan
 3954143132	barınak	ev
 3954142836	barınak	köpek
@@ -2148,7 +2148,7 @@ SubjectID	Target	Assoc
 3960388073	esinti	yaz
 3960354471	esinti	rüzgar
 3959674601	esinti	rüzgar
-3959536556	esinti	rüzgar 
+3959536556	esinti	rüzgar
 3958892469	esinti	rüzgar
 3958478795	esinti	rüzgar
 3958153417	esinti	rüzgar
@@ -2175,7 +2175,7 @@ SubjectID	Target	Assoc
 3954204193	esinti	mayıs
 3954178309	esinti	rüzgar
 3954173294	esinti	ağaç
-3954169220	esinti	bir rüzgar
+3954169220	esinti	rüzgar
 3954143297	esinti	rüzgar
 3954143132	esinti	rüzgar
 3954142836	esinti	mutluluk
@@ -2198,7 +2198,7 @@ SubjectID	Target	Assoc
 3961058558	avuç	?
 3960919691	avuç	ter
 3960388073	avuç	parmak
-3960354471	avuç	el içi 
+3960354471	avuç	el içi
 3959674601	avuç	el
 3959536556	avuç	kader
 3958892469	avuç	el
@@ -2227,7 +2227,7 @@ SubjectID	Target	Assoc
 3954204193	avuç	iz
 3954178309	avuç	yardım
 3954173294	avuç	el
-3954169220	avuç	bir çerez
+3954169220	avuç	çerez
 3954143297	avuç	el
 3954143132	avuç	el
 3954142836	avuç	istek
@@ -2244,7 +2244,7 @@ SubjectID	Target	Assoc
 3968662250	gelin	duvak
 3968240808	gelin	damat
 3967284794	gelin	damat
-3962910686	gelin	beyaz 
+3962910686	gelin	beyaz
 3961569893	gelin	damat
 3961062726	gelin	damat
 3961058558	gelin	gelinlik
@@ -2279,7 +2279,7 @@ SubjectID	Target	Assoc
 3954204193	gelin	beyaz
 3954178309	gelin	beyaz
 3954173294	gelin	damat
-3954169220	gelin	bir damat
+3954169220	gelin	damat
 3954143297	gelin	damat
 3954143132	gelin	beyaz
 3954142836	gelin	düğün
@@ -2304,9 +2304,9 @@ SubjectID	Target	Assoc
 3960388073	hüzün	mutsuz
 3960354471	hüzün	keder
 3959674601	hüzün	eş
-3959536556	hüzün	ayrılık 
+3959536556	hüzün	ayrılık
 3958892469	hüzün	yüz
-3958478795	hüzün	reddedilmek 
+3958478795	hüzün	reddedilmek
 3958153417	hüzün	keder
 3957969296	hüzün	kadın
 3957517953	hüzün	ağlamak
@@ -2331,7 +2331,7 @@ SubjectID	Target	Assoc
 3954204193	hüzün	sardunya
 3954178309	hüzün	siyah
 3954173294	hüzün	duygu
-3954169220	hüzün	bir sonbahar
+3954169220	hüzün	sonbahar
 3954143297	hüzün	mutsuzluk
 3954143132	hüzün	sıkıntı
 3954142836	hüzün	sonbahar
@@ -2354,9 +2354,9 @@ SubjectID	Target	Assoc
 3961058558	imza	onay
 3960919691	imza	kimlik
 3960388073	imza	mektup
-3960354471	imza	imza 
+3960354471	imza	imza
 3959674601	imza	yazı
-3959536556	imza	güç 
+3959536556	imza	güç
 3958892469	imza	kalem
 3958478795	imza	isim
 3958153417	imza	ad
@@ -2383,7 +2383,7 @@ SubjectID	Target	Assoc
 3954204193	imza	başbakan
 3954178309	imza	belge
 3954173294	imza	damga
-3954169220	imza	bir proje
+3954169220	imza	proje
 3954143297	imza	kişisel
 3954143132	imza	resmi
 3954142836	imza	benlik
@@ -2406,7 +2406,7 @@ SubjectID	Target	Assoc
 3961058558	hata	ders
 3960919691	hata	kabullenmek
 3960388073	hata	yanlış
-3960354471	hata	yanlış 
+3960354471	hata	yanlış
 3959674601	hata	yanlış
 3959536556	hata	bilgisayar
 3958892469	hata	yanlış
@@ -2435,7 +2435,7 @@ SubjectID	Target	Assoc
 3954204193	hata	müphem
 3954178309	hata	kusur
 3954173294	hata	yanlış
-3954169220	hata	bir özür
+3954169220	hata	özür
 3954143297	hata	özür
 3954143132	hata	yanlış
 3954142836	hata	yanlış
@@ -2482,12 +2482,12 @@ SubjectID	Target	Assoc
 3954590488	virüs	hastalık
 3954425539	virüs	salgın
 3954381627	virüs	hastalık
-3954237332	virüs	bilgisayar 
+3954237332	virüs	bilgisayar
 3954226832	virüs	mikrop
 3954204193	virüs	aşı
 3954178309	virüs	Ebola
 3954173294	virüs	bilgisayar
-3954169220	virüs	bir hastalık
+3954169220	virüs	hastalık
 3954143297	virüs	mikrop
 3954143132	virüs	hastalık
 3954142836	virüs	bilgisayar
@@ -2539,7 +2539,7 @@ SubjectID	Target	Assoc
 3954204193	lezzet	pide
 3954178309	lezzet	yemek
 3954173294	lezzet	yemek
-3954169220	lezzet	bir ziyafet
+3954169220	lezzet	ziyafet
 3954143297	lezzet	yemek
 3954143132	lezzet	yemek
 3954142836	lezzet	kalori
@@ -2591,7 +2591,7 @@ SubjectID	Target	Assoc
 3954204193	açlık	Afrika
 3954178309	açlık	Afrika
 3954173294	açlık	Afrika
-3954169220	açlık	bir evsiz
+3954169220	açlık	evsiz
 3954143297	açlık	susuzluk
 3954143132	açlık	yemek
 3954142836	açlık	sokak
@@ -2614,7 +2614,7 @@ SubjectID	Target	Assoc
 3961058558	dinamik	enerjik
 3960919691	dinamik	fizik
 3960388073	dinamik	spor
-3960354471	dinamik	genç gözüken kişi 
+3960354471	dinamik	genç gözüken kişi
 3959674601	dinamik	statik
 3959536556	dinamik	spor
 3958892469	dinamik	canlı
@@ -2643,7 +2643,7 @@ SubjectID	Target	Assoc
 3954204193	dinamik	genç
 3954178309	dinamik	güç
 3954173294	dinamik	enerjik
-3954169220	dinamik	bir enerji
+3954169220	dinamik	enerji
 3954143297	dinamik	hareketli
 3954143132	dinamik	hareketli
 3954142836	dinamik	fizik
@@ -2668,7 +2668,7 @@ SubjectID	Target	Assoc
 3960388073	bacak	vücut
 3960354471	bacak	ayak
 3959674601	bacak	kol
-3959536556	bacak	çorap 
+3959536556	bacak	çorap
 3958892469	bacak	vücut
 3958478795	bacak	kıllı
 3958153417	bacak	kıl
@@ -2695,7 +2695,7 @@ SubjectID	Target	Assoc
 3954204193	bacak	kıllı
 3954178309	bacak	ayak
 3954173294	bacak	kol
-3954169220	bacak	bir uzun
+3954169220	bacak	uzun
 3954143297	bacak	ayak
 3954143132	bacak	ten
 3954142836	bacak	ağrı
@@ -2747,7 +2747,7 @@ SubjectID	Target	Assoc
 3954204193	hasar	araba
 3954178309	hasar	araba
 3954173294	hasar	araba
-3954169220	hasar	bir araba
+3954169220	hasar	araba
 3954143297	hasar	zarar
 3954143132	hasar	zarar
 3954142836	hasar	deprem
@@ -2770,7 +2770,7 @@ SubjectID	Target	Assoc
 3961058558	sadık	bağlı
 3960919691	sadık	kayıp
 3960388073	sadık	kopek
-3960354471	sadık	eş 
+3960354471	sadık	eş
 3959674601	sadık	Ebubekir
 3959536556	sadık	hizmetkar
 3958892469	sadık	dost
@@ -2799,7 +2799,7 @@ SubjectID	Target	Assoc
 3954204193	sadık	Sıdıka
 3954178309	sadık	dost
 3954173294	sadık	köpek
-3954169220	sadık	bir köpek
+3954169220	sadık	köpek
 3954143297	sadık	güvenilir
 3954143132	sadık	güvenilir
 3954142836	sadık	köpek
@@ -2824,7 +2824,7 @@ SubjectID	Target	Assoc
 3960388073	elem	keder
 3960354471	elem	?
 3959674601	elem	keder
-3959536556	elem	hastalık 
+3959536556	elem	hastalık
 3958892469	elem	keder
 3958478795	elem	kalem
 3958153417	elem	keder
@@ -2851,7 +2851,7 @@ SubjectID	Target	Assoc
 3954204193	elem	tere fiş
 3954178309	elem	keder
 3954173294	elem	fena
-3954169220	elem	bir acı
+3954169220	elem	acı
 3954143297	elem	kalem
 3954143132	elem	?
 3954142836	elem	kader
@@ -2903,7 +2903,7 @@ SubjectID	Target	Assoc
 3954204193	yeni	eski
 3954178309	yeni	başlangıç
 3954173294	yeni	eski
-3954169220	yeni	bir eski
+3954169220	yeni	eski
 3954143297	yeni	eski
 3954143132	yeni	eski
 3954142836	yeni	koku
@@ -2926,9 +2926,9 @@ SubjectID	Target	Assoc
 3961058558	boğa	Kadıköy
 3960919691	boğa	burç
 3960388073	boğa	burç
-3960354471	boğa	burç 
+3960354471	boğa	burç
 3959674601	boğa	yarış
-3959536556	boğa	kırmızı 
+3959536556	boğa	kırmızı
 3958892469	boğa	yılan
 3958478795	boğa	burç
 3958153417	boğa	aslan
@@ -2955,7 +2955,7 @@ SubjectID	Target	Assoc
 3954204193	boğa	Kadıköy
 3954178309	boğa	İspanya
 3954173294	boğa	İspanya
-3954169220	boğa	bir güreş
+3954169220	boğa	güreş
 3954143297	boğa	burç
 3954143132	boğa	hayvan
 3954142836	boğa	burç
@@ -3007,7 +3007,7 @@ SubjectID	Target	Assoc
 3954204193	müftülük	din
 3954178309	müftülük	din
 3954173294	müftülük	cami
-3954169220	müftülük	bir din
+3954169220	müftülük	din
 3954143297	müftülük	ciddi
 3954143132	müftülük	muhtar
 3954142836	müftülük	din
@@ -3034,7 +3034,7 @@ SubjectID	Target	Assoc
 3959674601	yoga	meditasyon
 3959536556	yoga	huzur
 3958892469	yoga	meditasyon
-3958478795	yoga	renk renk taytlar ve matlar 
+3958478795	yoga	renk renk taytlar ve matlar
 3958153417	yoga	rahatlamak
 3957969296	yoga	spor
 3957517953	yoga	rahatlamak
@@ -3059,7 +3059,7 @@ SubjectID	Target	Assoc
 3954204193	yoga	aum
 3954178309	yoga	meditasyon
 3954173294	yoga	meditasyon
-3954169220	yoga	bir teşekkür
+3954169220	yoga	teşekkür
 3954143297	yoga	rahatlama
 3954143132	yoga	rahatlamak
 3954142836	yoga	esnek
@@ -3082,9 +3082,9 @@ SubjectID	Target	Assoc
 3961058558	solo	şarkı
 3960919691	solo	flüt
 3960388073	solo	müzik
-3960354471	solo	tek 
+3960354471	solo	tek
 3959674601	solo	tek
-3959536556	solo	gitar 
+3959536556	solo	gitar
 3958892469	solo	albüm
 3958478795	solo	tuvalet kağıdı
 3958153417	solo	tek
@@ -3111,11 +3111,11 @@ SubjectID	Target	Assoc
 3954204193	solo	performans
 3954178309	solo	yalnız
 3954173294	solo	şarkı
-3954169220	solo	bir piyano
+3954169220	solo	piyano
 3954143297	solo	tek
 3954143132	solo	Selpak
 3954142836	solo	cesaret
-3954103511	solo	yalnız 
+3954103511	solo	yalnız
 3954097659	solo	gitar
 3954038614	solo	şarkı
 3954028957	solo	müzik
@@ -3163,7 +3163,7 @@ SubjectID	Target	Assoc
 3954204193	belge	öğrenci
 3954178309	belge	okul
 3954173294	belge	kanıt
-3954169220	belge	bir ödev
+3954169220	belge	ödev
 3954143297	belge	kağıt
 3954143132	belge	resmi
 3954142836	belge	kanıt
@@ -3215,7 +3215,7 @@ SubjectID	Target	Assoc
 3954204193	tanıtım	afiş
 3954178309	tanıtım	sergi
 3954173294	tanıtım	reklam
-3954169220	tanıtım	bir sunum
+3954169220	tanıtım	sunum
 3954143297	tanıtım	reklam
 3954143132	tanıtım	medya
 3954142836	tanıtım	reklam
@@ -3267,7 +3267,7 @@ SubjectID	Target	Assoc
 3954204193	zaman	sonsuz
 3954178309	zaman	saat
 3954173294	zaman	akış
-3954169220	zaman	bir durmaz
+3954169220	zaman	durmaz
 3954143297	zaman	vakit
 3954143132	zaman	sınırlı
 3954142836	zaman	görecelik
@@ -3319,7 +3319,7 @@ SubjectID	Target	Assoc
 3954204193	pencere	açık
 3954178309	pencere	ev
 3954173294	pencere	ev
-3954169220	pencere	bir sıcak
+3954169220	pencere	sıcak
 3954143297	pencere	kapı
 3954143132	pencere	ev
 3954142836	pencere	ışık
@@ -3346,7 +3346,7 @@ SubjectID	Target	Assoc
 3959674601	papatya	çiçek
 3959536556	papatya	bahar
 3958892469	papatya	çiçek
-3958478795	papatya	seviyor sevmiyor 
+3958478795	papatya	seviyor sevmiyor
 3958153417	papatya	çiçek
 3957969296	papatya	çiçek
 3957517953	papatya	çiçek
@@ -3371,7 +3371,7 @@ SubjectID	Target	Assoc
 3954204193	papatya	alerji
 3954178309	papatya	fal
 3954173294	papatya	taç
-3954169220	papatya	bir fal
+3954169220	papatya	fal
 3954143297	papatya	çiçek
 3954143132	papatya	çiçek
 3954142836	papatya	sevgi
@@ -3396,7 +3396,7 @@ SubjectID	Target	Assoc
 3960388073	haz	Brownie
 3960354471	haz	duygu
 3959674601	haz	zevk
-3959536556	haz	çocuk 
+3959536556	haz	çocuk
 3958892469	haz	duygu
 3958478795	haz	yemek yemek
 3958153417	haz	tat
@@ -3423,7 +3423,7 @@ SubjectID	Target	Assoc
 3954204193	haz	güzel
 3954178309	haz	libido
 3954173294	haz	tutku
-3954169220	haz	bir doyum
+3954169220	haz	doyum
 3954143297	haz	zevk
 3954143132	haz	zevk
 3954142836	haz	seks
@@ -3446,9 +3446,9 @@ SubjectID	Target	Assoc
 3961058558	oksijen	rahatlık
 3960919691	oksijen	hidrojen
 3960388073	oksijen	fen
-3960354471	oksijen	önemli 
+3960354471	oksijen	önemli
 3959674601	oksijen	element
-3959536556	oksijen	doğa 
+3959536556	oksijen	doğa
 3958892469	oksijen	hava
 3958478795	oksijen	hava
 3958153417	oksijen	hava
@@ -3475,7 +3475,7 @@ SubjectID	Target	Assoc
 3954204193	oksijen	acı
 3954178309	oksijen	ağaç
 3954173294	oksijen	su
-3954169220	oksijen	bir hava
+3954169220	oksijen	hava
 3954143297	oksijen	nefes
 3954143132	oksijen	yaşam
 3954142836	oksijen	yaşam
@@ -3527,7 +3527,7 @@ SubjectID	Target	Assoc
 3954204193	semer	at
 3954178309	semer	eşek
 3954173294	semer	?
-3954169220	semer	bir eşek
+3954169220	semer	eşek
 3954143297	semer	eşek
 3954143132	semer	?
 3954142836	semer	kemer
@@ -3552,7 +3552,7 @@ SubjectID	Target	Assoc
 3960388073	erozyon	heyelan
 3960354471	erozyon	coğrafya
 3959674601	erozyon	toprak
-3959536556	erozyon	yüksek 
+3959536556	erozyon	yüksek
 3958892469	erozyon	ağaç
 3958478795	erozyon	toprak
 3958153417	erozyon	toprak
@@ -3579,7 +3579,7 @@ SubjectID	Target	Assoc
 3954204193	erozyon	toprak
 3954178309	erozyon	toprak
 3954173294	erozyon	deprem
-3954169220	erozyon	bir toprak
+3954169220	erozyon	toprak
 3954143297	erozyon	toprak
 3954143132	erozyon	doğal afet
 3954142836	erozyon	afet
@@ -3604,7 +3604,7 @@ SubjectID	Target	Assoc
 3960388073	toz	duman
 3960354471	toz	duman
 3959674601	toz	küf
-3959536556	toz	hastalık 
+3959536556	toz	hastalık
 3958892469	toz	zerre
 3958478795	toz	inşaat
 3958153417	toz	toprak
@@ -3631,7 +3631,7 @@ SubjectID	Target	Assoc
 3954204193	toz	töz
 3954178309	toz	çevre kirliliği
 3954173294	toz	şeker
-3954169220	toz	bir pislik
+3954169220	toz	pislik
 3954143297	toz	bakteri
 3954143132	toz	polen
 3954142836	toz	alerji
@@ -3683,7 +3683,7 @@ SubjectID	Target	Assoc
 3954204193	standart	rakı
 3954178309	standart	ortalama
 3954173294	standart	normal
-3954169220	standart	bir aynı
+3954169220	standart	aynı
 3954143297	standart	alışılmış
 3954143132	standart	stabil
 3954142836	standart	ortalama
@@ -3735,7 +3735,7 @@ SubjectID	Target	Assoc
 3954204193	yama	pantolon
 3954178309	yama	fakirlik
 3954173294	yama	terzi
-3954169220	yama	bir yırtık
+3954169220	yama	yırtık
 3954143297	yama	dikme
 3954143132	yama	dikmek
 3954142836	yama	ameliyat
@@ -3787,7 +3787,7 @@ SubjectID	Target	Assoc
 3954204193	kas	fit
 3954178309	kas	spor
 3954173294	kas	vücut
-3954169220	kas	bir erkek
+3954169220	kas	erkek
 3954143297	kas	spor
 3954143132	kas	vücut
 3954142836	kas	acı
@@ -3812,7 +3812,7 @@ SubjectID	Target	Assoc
 3960388073	meraklı	kedi
 3960354471	meraklı	Biray Teyze
 3959674601	meraklı	gözlük
-3959536556	meraklı	büyüteç 
+3959536556	meraklı	büyüteç
 3958892469	meraklı	kadın
 3958478795	meraklı	kedi
 3958153417	meraklı	araştırmacı
@@ -3834,12 +3834,12 @@ SubjectID	Target	Assoc
 3954590488	meraklı	kedi
 3954425539	meraklı	kedi
 3954381627	meraklı	çocuk
-3954237332	meraklı	Melahat 
+3954237332	meraklı	Melahat
 3954226832	meraklı	büyüteç
 3954204193	meraklı	kedi
 3954178309	meraklı	filozof
 3954173294	meraklı	akıllı
-3954169220	meraklı	bir fazlalık
+3954169220	meraklı	fazlalık
 3954143297	meraklı	sorgulama
 3954143132	meraklı	şüpheci
 3954142836	meraklı	kedi
@@ -3864,7 +3864,7 @@ SubjectID	Target	Assoc
 3960388073	pire	bit
 3960354471	pire	bit
 3959674601	pire	ateş
-3959536556	pire	kıyafet 
+3959536556	pire	kıyafet
 3958892469	pire	yorgan
 3958478795	pire	köpek
 3958153417	pire	böcek
@@ -3891,7 +3891,7 @@ SubjectID	Target	Assoc
 3954204193	pire	tüy
 3954178309	pire	kedi
 3954173294	pire	bit
-3954169220	pire	bir bit
+3954169220	pire	bit
 3954143297	pire	böcek
 3954143132	pire	küçük
 3954142836	pire	yorgan
@@ -3914,9 +3914,9 @@ SubjectID	Target	Assoc
 3961058558	sazlık	sivrisinek
 3960919691	sazlık	kurbağa
 3960388073	sazlık	bataklık
-3960354471	sazlık	samanlık 
+3960354471	sazlık	samanlık
 3959674601	sazlık	kamış
-3959536556	sazlık	böcek 
+3959536556	sazlık	böcek
 3958892469	sazlık	dere
 3958478795	sazlık	av
 3958153417	sazlık	ot
@@ -3943,7 +3943,7 @@ SubjectID	Target	Assoc
 3954204193	sazlık	dere
 3954178309	sazlık	bataklık
 3954173294	sazlık	saman
-3954169220	sazlık	bir rahatlık
+3954169220	sazlık	rahatlık
 3954143297	sazlık	göl
 3954143132	sazlık	bahçe
 3954142836	sazlık	kurbağa
@@ -3966,9 +3966,9 @@ SubjectID	Target	Assoc
 3961058558	duygulu	ağlamak
 3960919691	duygulu	anne
 3960388073	duygulu	ağlamak
-3960354471	duygulu	hisli 
+3960354471	duygulu	hisli
 3959674601	duygulu	Ayhan
-3959536556	duygulu	ağlamak 
+3959536556	duygulu	ağlamak
 3958892469	duygulu	içli
 3958478795	duygulu	kız
 3958153417	duygulu	duygusal
@@ -3995,7 +3995,7 @@ SubjectID	Target	Assoc
 3954204193	duygulu	coşkulu
 3954178309	duygulu	aşk
 3954173294	duygulu	hassas
-3954169220	duygulu	bir üzgün
+3954169220	duygulu	üzgün
 3954143297	duygulu	his
 3954143132	duygulu	hassas
 3954142836	duygulu	hassas
@@ -4018,9 +4018,9 @@ SubjectID	Target	Assoc
 3961058558	hırçınlık	öfke
 3960919691	hırçınlık	inatçılık
 3960388073	hırçınlık	ergenlik
-3960354471	hırçınlık	tedirginlik 
+3960354471	hırçınlık	tedirginlik
 3959674601	hırçınlık	sinir
-3959536556	hırçınlık	çocuk 
+3959536556	hırçınlık	çocuk
 3958892469	hırçınlık	asi
 3958478795	hırçınlık	motivasyon
 3958153417	hırçınlık	haşarılık
@@ -4047,7 +4047,7 @@ SubjectID	Target	Assoc
 3954204193	hırçınlık	ergen
 3954178309	hırçınlık	kıskançlık
 3954173294	hırçınlık	güçlü karakter
-3954169220	hırçınlık	bir kedi
+3954169220	hırçınlık	kedi
 3954143297	hırçınlık	asi
 3954143132	hırçınlık	asi
 3954142836	hırçınlık	asilik
@@ -4070,9 +4070,9 @@ SubjectID	Target	Assoc
 3961058558	takoz	araba
 3960919691	takoz	hapishane
 3960388073	takoz	eski
-3960354471	takoz	işe yaramayan 
+3960354471	takoz	işe yaramayan
 3959674601	takoz	tahta
-3959536556	takoz	ayakkabı 
+3959536556	takoz	ayakkabı
 3958892469	takoz	?
 3958478795	takoz	yokuş
 3958153417	takoz	hurda
@@ -4099,7 +4099,7 @@ SubjectID	Target	Assoc
 3954204193	takoz	tır
 3954178309	takoz	marangoz
 3954173294	takoz	tekerlek
-3954169220	takoz	bir eski
+3954169220	takoz	eski
 3954143297	takoz	eski
 3954143132	takoz	eski
 3954142836	takoz	acı
@@ -4151,7 +4151,7 @@ SubjectID	Target	Assoc
 3954204193	yatsı	namaz
 3954178309	yatsı	namaz
 3954173294	yatsı	ezan
-3954169220	yatsı	bir namaz
+3954169220	yatsı	namaz
 3954143297	yatsı	namaz
 3954143132	yatsı	namaz
 3954142836	yatsı	namaz
@@ -4230,7 +4230,7 @@ SubjectID	Target	Assoc
 3959674601	delik	misket
 3959536556	delik	uzay
 3958892469	delik	?
-3958478795	delik	pantolon 
+3958478795	delik	pantolon
 3958153417	delik	boşluk
 3957969296	delik	pantolon
 3957517953	delik	elbise
@@ -4255,7 +4255,7 @@ SubjectID	Target	Assoc
 3954204193	delik	kumaş
 3954178309	delik	küpe
 3954173294	delik	iğne
-3954169220	delik	bir kapatmak
+3954169220	delik	kapatmak
 3954143297	delik	boşluk
 3954143132	delik	boşluk
 3954142836	delik	boş
@@ -4278,7 +4278,7 @@ SubjectID	Target	Assoc
 3961058558	katil	cinayet
 3960919691	katil	ölüm
 3960388073	katil	hırsız
-3960354471	katil	duygusuz 
+3960354471	katil	duygusuz
 3959674601	katil	kurşun
 3959536556	katil	kan
 3958892469	katil	cinayet
@@ -4307,7 +4307,7 @@ SubjectID	Target	Assoc
 3954204193	katil	zanlı
 3954178309	katil	cinayet
 3954173294	katil	bıçak
-3954169220	katil	bir seri
+3954169220	katil	seri
 3954143297	katil	polis
 3954143132	katil	suçlu
 3954142836	katil	intikam
@@ -4332,7 +4332,7 @@ SubjectID	Target	Assoc
 3960388073	özet	sınav
 3960354471	özet	ders çalışmak
 3959674601	özet	summary
-3959536556	özet	sınav 
+3959536556	özet	sınav
 3958892469	özet	?
 3958478795	özet	kısa
 3958153417	özet	kısa
@@ -4359,7 +4359,7 @@ SubjectID	Target	Assoc
 3954204193	özet	dizi
 3954178309	özet	ders
 3954173294	özet	kısa
-3954169220	özet	bir kitap
+3954169220	özet	kitap
 3954143297	özet	kısa
 3954143132	özet	ana tema
 3954142836	özet	net
@@ -4382,7 +4382,7 @@ SubjectID	Target	Assoc
 3961058558	alıntı	önemli
 3960919691	alıntı	format
 3960388073	alıntı	edebiyat
-3960354471	alıntı	tırnak işareti 
+3960354471	alıntı	tırnak işareti
 3959674601	alıntı	quote
 3959536556	alıntı	felsefe
 3958892469	alıntı	intihal
@@ -4411,7 +4411,7 @@ SubjectID	Target	Assoc
 3954204193	alıntı	tez
 3954178309	alıntı	kitap
 3954173294	alıntı	cümle
-3954169220	alıntı	bir çalıntı
+3954169220	alıntı	çalıntı
 3954143297	alıntı	ödev
 3954143132	alıntı	akademik
 3954142836	alıntı	söylem
@@ -4434,9 +4434,9 @@ SubjectID	Target	Assoc
 3961058558	pomat	krem
 3960919691	pomat	yara
 3960388073	pomat	krem
-3960354471	pomat	krem 
+3960354471	pomat	krem
 3959674601	pomat	?
-3959536556	pomat	şiir 
+3959536556	pomat	şiir
 3958892469	pomat	pamuk
 3958478795	pomat	pamuk
 3958153417	pomat	?
@@ -4463,7 +4463,7 @@ SubjectID	Target	Assoc
 3954204193	pomat	sivilce
 3954178309	pomat	krem
 3954173294	pomat	?
-3954169220	pomat	bir pamuk
+3954169220	pomat	pamuk
 3954143297	pomat	krem
 3954143132	pomat	?
 3954142836	pomat	domates
@@ -4486,9 +4486,9 @@ SubjectID	Target	Assoc
 3961058558	gıcırtı	kapı
 3960919691	gıcırtı	kapı
 3960388073	gıcırtı	kapı
-3960354471	gıcırtı	kapı 
+3960354471	gıcırtı	kapı
 3959674601	gıcırtı	ses
-3959536556	gıcırtı	kapı 
+3959536556	gıcırtı	kapı
 3958892469	gıcırtı	kapı
 3958478795	gıcırtı	kapı
 3958153417	gıcırtı	ses
@@ -4515,7 +4515,7 @@ SubjectID	Target	Assoc
 3954204193	gıcırtı	hafız
 3954178309	gıcırtı	kapı
 3954173294	gıcırtı	kapı
-3954169220	gıcırtı	bir kapı
+3954169220	gıcırtı	kapı
 3954143297	gıcırtı	ses
 3954143132	gıcırtı	ses
 3954142836	gıcırtı	korku
@@ -4540,7 +4540,7 @@ SubjectID	Target	Assoc
 3960388073	asker	Çanakkale
 3960354471	asker	vatan
 3959674601	asker	silah
-3959536556	asker	yeşil 
+3959536556	asker	yeşil
 3958892469	asker	komando
 3958478795	asker	askerlik
 3958153417	asker	er
@@ -4567,7 +4567,7 @@ SubjectID	Target	Assoc
 3954204193	asker	haki
 3954178309	asker	şehit
 3954173294	asker	yeşil
-3954169220	asker	bir er
+3954169220	asker	er
 3954143297	asker	silah
 3954143132	asker	vatan
 3954142836	asker	savunma
@@ -4619,7 +4619,7 @@ SubjectID	Target	Assoc
 3954204193	yarış	pist
 3954178309	yarış	hayat
 3954173294	yarış	araba
-3954169220	yarış	bir kapışma
+3954169220	yarış	kapışma
 3954143297	yarış	rekabet
 3954143132	yarış	yarışma
 3954142836	yarış	galibiyet
@@ -4642,7 +4642,7 @@ SubjectID	Target	Assoc
 3961058558	paslı	demir
 3960919691	paslı	demir
 3960388073	paslı	çivi
-3960354471	paslı	demir 
+3960354471	paslı	demir
 3959674601	paslı	kirli
 3959536556	paslı	gemi
 3958892469	paslı	demir
@@ -4666,12 +4666,12 @@ SubjectID	Target	Assoc
 3954590488	paslı	kirli
 3954425539	paslı	çivi
 3954381627	paslı	çivi
-3954237332	paslı	yağmur 
+3954237332	paslı	yağmur
 3954226832	paslı	tetanos
 3954204193	paslı	salata
 3954178309	paslı	demir
 3954173294	paslı	demir
-3954169220	paslı	bir demir
+3954169220	paslı	demir
 3954143297	paslı	demir
 3954143132	paslı	pis
 3954142836	paslı	çelik
@@ -4696,7 +4696,7 @@ SubjectID	Target	Assoc
 3960388073	altın	gümüş
 3960354471	altın	küçük altın
 3959674601	altın	gold
-3959536556	altın	külçe 
+3959536556	altın	külçe
 3958892469	altın	saat
 3958478795	altın	sarı
 3958153417	altın	kuruş
@@ -4723,7 +4723,7 @@ SubjectID	Target	Assoc
 3954204193	altın	çeyrek
 3954178309	altın	ziynet
 3954173294	altın	cumhuriyet
-3954169220	altın	bir alyans
+3954169220	altın	alyans
 3954143297	altın	değerli
 3954143132	altın	değerli
 3954142836	altın	değerli
@@ -4748,7 +4748,7 @@ SubjectID	Target	Assoc
 3960388073	bilişim	bilgisayar
 3960354471	bilişim	deney
 3959674601	bilişim	teknoloji
-3959536556	bilişim	ağ 
+3959536556	bilişim	ağ
 3958892469	bilişim	müze
 3958478795	bilişim	teknoloji
 3958153417	bilişim	teknoloji
@@ -4775,7 +4775,7 @@ SubjectID	Target	Assoc
 3954204193	bilişim	görgü
 3954178309	bilişim	teknoloji
 3954173294	bilişim	?
-3954169220	bilişim	bir teknoloji
+3954169220	bilişim	teknoloji
 3954143297	bilişim	elektronik
 3954143132	bilişim	bilim
 3954142836	bilişim	suç
@@ -4827,7 +4827,7 @@ SubjectID	Target	Assoc
 3954204193	süresiz	nesne
 3954178309	süresiz	cennet
 3954173294	süresiz	sonsuz
-3954169220	süresiz	bir hayat
+3954169220	süresiz	hayat
 3954143297	süresiz	vakitli
 3954143132	süresiz	sınırsız
 3954142836	süresiz	sınır
@@ -4839,7 +4839,7 @@ SubjectID	Target	Assoc
 3975627654	medya	televizyon
 3975297560	medya	televizyon
 3973880269	medya	televizyon
-3970313078	medya	Adalet ve Kalkınma Partisi
+3970313078	medya	AKP
 3969147097	medya	haber
 3968662250	medya	televizyon
 3968240808	medya	televizyon
@@ -4852,7 +4852,7 @@ SubjectID	Target	Assoc
 3960388073	medya	iletişim
 3960354471	medya	televizyon
 3959674601	medya	gazete
-3959536556	medya	tartışma 
+3959536556	medya	tartışma
 3958892469	medya	tasarım
 3958478795	medya	reklam
 3958153417	medya	haber
@@ -4879,7 +4879,7 @@ SubjectID	Target	Assoc
 3954204193	medya	komşu
 3954178309	medya	dedikodu
 3954173294	medya	televizyon
-3954169220	medya	bir acun 
+3954169220	medya	acun
 3954143297	medya	reklam
 3954143132	medya	iletişim
 3954142836	medya	kandırmaca
@@ -4931,7 +4931,7 @@ SubjectID	Target	Assoc
 3954204193	cevap	soru
 3954178309	cevap	soru
 3954173294	cevap	soru
-3954169220	cevap	bir soru
+3954169220	cevap	soru
 3954143297	cevap	soru
 3954143132	cevap	yanıt
 3954142836	cevap	soru
@@ -4954,9 +4954,9 @@ SubjectID	Target	Assoc
 3961058558	ev	huzur
 3960919691	ev	huzur
 3960388073	ev	güven
-3960354471	ev	güvenli yer 
+3960354471	ev	güvenli yer
 3959674601	ev	araba
-3959536556	ev	sıcaklık 
+3959536556	ev	sıcaklık
 3958892469	ev	hane
 3958478795	ev	Wi-Fi
 3958153417	ev	araba
@@ -4983,7 +4983,7 @@ SubjectID	Target	Assoc
 3954204193	ev	harika
 3954178309	ev	barınak
 3954173294	ev	aile
-3954169220	ev	bir yuva
+3954169220	ev	yuva
 3954143297	ev	oda
 3954143132	ev	aile
 3954142836	ev	yuva
@@ -5008,9 +5008,9 @@ SubjectID	Target	Assoc
 3960388073	para	dolar
 3960354471	para	hayat
 3959674601	para	zenginlik
-3959536556	para	yeşil 
+3959536556	para	yeşil
 3958892469	para	yeşil
-3958478795	para	zenginlik 
+3958478795	para	zenginlik
 3958153417	para	mal
 3957969296	para	cüzdan
 3957517953	para	kağıt
@@ -5035,7 +5035,7 @@ SubjectID	Target	Assoc
 3954204193	para	yok
 3954178309	para	araç
 3954173294	para	cüzdan
-3954169220	para	bir çalışmak
+3954169220	para	çalışmak
 3954143297	para	zengin
 3954143132	para	zenginlik
 3954142836	para	güç
@@ -5110,9 +5110,9 @@ SubjectID	Target	Assoc
 3961058558	hayvan	sempatik
 3960919691	hayvan	kedi
 3960388073	hayvan	kopek
-3960354471	hayvan	köpek 
+3960354471	hayvan	köpek
 3959674601	hayvan	insan
-3959536556	hayvan	doğa 
+3959536556	hayvan	doğa
 3958892469	hayvan	köpek
 3958478795	hayvan	kedim
 3958153417	hayvan	bitki
@@ -5139,7 +5139,7 @@ SubjectID	Target	Assoc
 3954204193	hayvan	köpek
 3954178309	hayvan	aciz
 3954173294	hayvan	köpek
-3954169220	hayvan	bir aşk
+3954169220	hayvan	aşk
 3954143297	hayvan	kopek
 3954143132	hayvan	öküz
 3954142836	hayvan	at
@@ -5164,7 +5164,7 @@ SubjectID	Target	Assoc
 3960388073	kırmızı	ask
 3960354471	kırmızı	aşk
 3959674601	kırmızı	renk
-3959536556	kırmızı	müzik 
+3959536556	kırmızı	müzik
 3958892469	kırmızı	balon
 3958478795	kırmızı	ruj
 3958153417	kırmızı	al
@@ -5185,13 +5185,13 @@ SubjectID	Target	Assoc
 3954671574	kırmızı	aşk
 3954590488	kırmızı	al
 3954425539	kırmızı	meşin
-3954381627	kırmızı	Orhan pamuk 
+3954381627	kırmızı	Orhan Pamuk
 3954237332	kırmızı	Furkan
 3954226832	kırmızı	elma
 3954204193	kırmızı	lüle
 3954178309	kırmızı	tutku
 3954173294	kırmızı	domates
-3954169220	kırmızı	bir beyaz
+3954169220	kırmızı	beyaz
 3954143297	kırmızı	siyah
 3954143132	kırmızı	çekici
 3954142836	kırmızı	aşk

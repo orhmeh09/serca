@@ -43,14 +43,15 @@ def get_dups(targets):
 
 def write_dups(opath, dups):
     f = open(opath, "w", encoding="utf-8")
-    writer = csv.DictWriter(f, fieldnames=['Target', 'Assoc', 'n', 'Root', 'Ratio'], delimiter='\t')
+    writer = csv.DictWriter(f, fieldnames=['Target', 'Assoc', 'n', 'Root', 'Root.n', 'Ratio'], delimiter='\t', lineterminator="\n")
     writer.writeheader()
-    for t in dups:
+    for t in sorted(dups.keys()):
         for dupset in dups[t]:
             root = dupset[0][0]
+            root_n = dupset[0][1]
             for w in dupset:
                 ratio = round(SequenceMatcher(None, root, w[0]).ratio(), 2)
-                row = {'Target' : t, 'Assoc' : w[0], 'n' : w[1], 'Root' : root, 'Ratio' : ratio}
+                row = {'Target' : t, 'Assoc' : w[0], 'n' : w[1], 'Root' : root, 'Root.n': root_n, 'Ratio' : ratio}
                 writer.writerow(row)
     f.close()
 
