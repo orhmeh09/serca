@@ -1,0 +1,4 @@
+Tag	ValidResponses
+onl	52
+tek	100
+umi	104
