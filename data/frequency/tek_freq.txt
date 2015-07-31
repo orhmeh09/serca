@@ -6746,7 +6746,8 @@ hüzün	dert	2
 ısrar	nefret	1	
 ısrar	gereksiz	7	
 ısrar	üsteleme	2	
-ısrar	ev sahibi	nezaket	1
+ısrar	ev sahibi	1
+ısrar	nezaket	1
 ısrar	sıkıcı	6	
 ısrar	yanlış	2	
 ısrar	haz	1	
