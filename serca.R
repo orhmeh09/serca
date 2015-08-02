@@ -1,28 +1,7 @@
 library(dplyr)
-library(tools)
 library(magrittr)
-write.tdelim <- function(x, file) {
-  write.table(x, file, sep="\t", row.names=F, fileEncoding="UTF-8", quote=F)
-}
-
-read.tdelim <- function(file) {
-  read.delim(file, stringsAsFactors = F, fileEncoding = "utf8")
-}
-
-load_faset <- function(path) {
-  t.base <- tbl_df(read.tdelim(path))
-  t <- t.base %>% group_by(Target) %>% mutate(Rank=dense_rank(-n), Rank_Max=rank(n, ties.method="max"), P=round((1/(sum(n)/n)), 3))
-  f = list()
-  f$orig.table <- t
-  f$path <- path
-  f$abspath <- tools::file_path_as_absolute(path)
-  f$name <- tools::file_path_sans_ext(path)
-  f$tag <- substring(f$name, 1, 3)
-  f$table <- f$orig.table
-  f$n.targets <- length(unique(t$Target))
-  return (f)
-}
-
+library(foreach)
+library(data.table)
 
 faset_target_meta <- function(f, Target.name) {
   t <- f$orig.table
@@ -34,6 +13,14 @@ faset_target_meta <- function(f, Target.name) {
   return (info)
 }
 
+load_frequencies <- function(path) {
+  f <- fread(path, stringsAsFactors = FALSE)
+  f <- f %>% arrange(Target, desc(n), Assoc)
+  f <- f %>% mutate(Rank = dense_rank(-n), 
+                    RankMax=rank(n, ties.method = "max"),
+                    Probability=round((1/(sum(n)/n)), 3))
+  return (f)
+}
 
 idio <- function(t) {
   t %>% filter(n == 1)
@@ -47,32 +34,36 @@ nonq <- function(t) {
   t %>% filter(Assoc != '?')
 }
 
-get_setsizes <- function(t) {
+get_asetsizes <- function(t) {
   t %>% nonidio() %>% nonq() %>% group_by(Target) %>% summarise(setsize=n())
 }
 
 
-Sys.setlocale("LC_CTYPE", "Turkish_Turkey.1254")
-Sys.setlocale("LC_COLLATE", "Turkish_Turkey.1254")
+#Sys.setlocale("LC_CTYPE", "Turkish_Turkey.1254")
+#Sys.setlocale("LC_COLLATE", "Turkish_Turkey.1254")
 
-onl <- load_faset('data/frequency/onl_freq.txt')
-onl$n.subjects <- 52
-onl$setsizes <- get_setsizes(onl$table)
+frequencies.meta <- tbl_dt(read.delim('data/meta.txt', stringsAsFactors = TRUE, fileEncoding = "UTF-8"))
+#frequencies.paths <- lapply(fas.meta$Label, function(label){paste('data/frequency/', label, '.txt', sep='')})
+frequencies <- frequencies.meta %>%
+  transmute(Label=Label, Path = paste('data/frequency/', Label, '.txt', sep=''))
 
-tek <- load_faset('data/frequency/tek_freq.txt')
-tek$n.subjects <- 100
-tek$setsizes <- get_setsizes(tek$table)
+frequencies <- frequencies %>% mutate(Frequencies = tbl_dt(read.delim(Path, stringsAsFactors = FALSE)))
 
-umi <- load_faset('data/frequency/umi_freq.txt')
-umi$n.subjects <- 104
-umi$setsizes <- get_setsizes(umi$table)
+#setsizes <- lapply(frequencies, get_asetsizes)
 
+
+#targets <- transmute(fa, )
+#fa <- mutate(fa, NumTargets = length(unique(frequencies$Target)))
+#fa <- mutate(fa, AssocSetSize = get_asetsizes(frequencies))
+#fa <- mutate(fa, NumIdio = nrow(idio(frequencies)))
+
+                    
 # umi.fas <- umi$table %>% nonidio() %>% nonq() %>% group_by(Target) %>% summarise(set_size=n())
 # tum.fas <- semi_join(tek.fas, umi.fas, by='Target')
 
-tum = list()
-tum$setsizes <- semi_join(tek$setsizes, umi$setsizes, by='Target')
+#tum = list()
+#tum$setsizes <- semi_join(tek$setsizes, umi$setsizes, by='Target')
 
-ss <-  onl$setsizes %>% merge(umi$setsizes, by = 'Target', suffixes = c('.onl', '.umi')) %>% merge(tum$setsizes)
+#ss <-  onl$setsizes %>% merge(umi$setsizes, by = 'Target', suffixes = c('.onl', '.umi')) %>% merge(tum$setsizes)
 #names(ss)[names(ss) == 'setsize'] <- 'setsize.tek'
-colnames(ss) <- c('Target', 'SS.onl', 'SS.umi', 'SS.tek')
+#colnames(ss) <- c('Target', 'SS.onl', 'SS.umi', 'SS.tek')
