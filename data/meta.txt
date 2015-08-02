@@ -1,4 +1,4 @@
-Tag	ValidResponses
-onl	52
-tek	100
-umi	104
+Label	FullName	Institution	Year	Subjects
+tek	Tekcan	Bogazici	2003	100
+umi	Umit	Bilgi	2015	104
+onl	Online	Bilgi	2015	52
