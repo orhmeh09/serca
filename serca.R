@@ -1,7 +1,5 @@
 library(dplyr)
-library(magrittr)
-library(foreach)
-library(data.table)
+library(tools)
 
 faset_target_meta <- function(f, Target.name) {
   t <- f$orig.table
@@ -14,12 +12,13 @@ faset_target_meta <- function(f, Target.name) {
 }
 
 load_frequencies <- function(path) {
-  f <- fread(path, stringsAsFactors = FALSE)
+  f <- tbl_df(read.delim(path, stringsAsFactors = FALSE, fileEncoding="UTF-8"))
   f <- f %>% arrange(Target, desc(n), Assoc)
-  f <- f %>% mutate(Rank = dense_rank(-n), 
-                    RankMax=rank(n, ties.method = "max"),
-                    Probability=round((1/(sum(n)/n)), 3))
-  return (f)
+  f <- f %>% group_by(Target, Assoc) %>%
+    mutate(Rank = dense_rank(desc(n)), 
+           RankMax=rank(n, ties.method = "max"),
+           Probability=round((1/(sum(n)/n)), 3))
+  return(f)
 }
 
 idio <- function(t) {
@@ -34,7 +33,7 @@ nonq <- function(t) {
   t %>% filter(Assoc != '?')
 }
 
-get_asetsizes <- function(t) {
+get_setsizes <- function(t) {
   t %>% nonidio() %>% nonq() %>% group_by(Target) %>% summarise(setsize=n())
 }
 
@@ -42,14 +41,8 @@ get_asetsizes <- function(t) {
 #Sys.setlocale("LC_CTYPE", "Turkish_Turkey.1254")
 #Sys.setlocale("LC_COLLATE", "Turkish_Turkey.1254")
 
-frequencies.meta <- tbl_dt(read.delim('data/meta.txt', stringsAsFactors = TRUE, fileEncoding = "UTF-8"))
-#frequencies.paths <- lapply(fas.meta$Label, function(label){paste('data/frequency/', label, '.txt', sep='')})
-frequencies <- frequencies.meta %>%
-  transmute(Label=Label, Path = paste('data/frequency/', Label, '.txt', sep=''))
 
-frequencies <- frequencies %>% mutate(Frequencies = tbl_dt(read.delim(Path, stringsAsFactors = FALSE)))
 
-#setsizes <- lapply(frequencies, get_asetsizes)
 
 
 #targets <- transmute(fa, )

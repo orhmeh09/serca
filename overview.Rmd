@@ -6,51 +6,60 @@ output: html_document
 ---
 ```{r, echo=FALSE}
 source("serca.R")
-
-
-
-```
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-
-# Data
-- Tekcan: Abbreviated _tek_
-- Umit: Abbreviated _umi_, collected at the Bilgi Cog Lab in 2015
-- Online: Abbreviated _onl_, collected online by the Bilgi Cog Lab in 2015
-
-Format of the data is tab-separated UTF-8.
-
-## Online (onl)
-- Origin: Collected online via SurveyMonkey in spring 2015
-- No. valid response sets: `r onl$n.subjects`
-- No. targets: `r onl$n.targets`
-
-## Umit (umi)
-- Origin: Collected at Bilgi University in spring 2015
-- No. valid response sets: `r umi$n.subjects`
-- No. targets: `r umi$n.targets`
-
-## Tekcan (tek)
-- Origin: Collected at Bogazici University after 2003, published 2005
-- No. valid response sets:  `r tek$n.subjects`
-- No. targets: `r tek$n.targets`
-
-
-
-
-```{r}
 library(knitr)
-library(printr)
+library(foreach)
+library(iterators)
+library(dplyr)
+message("ta")
+fmeta <- tbl_df(read.delim('data/meta.txt', stringsAsFactors = FALSE, fileEncoding = "UTF-8"))
 
-ss
+freqs <- tbl_df(data.frame())
+foreach(x=iter(fmeta, by='row')) %do% {
+  t <- load_frequencies(x$FrequenciesPath) %>% mutate(Label=x$Label)
+  freqs <- full_join(freqs, t)
+}
+
+setsizes <- tbl_df(data.frame())
+foreach(x=iter(fmeta, by='row')) %do% {
+  t <- load_frequencies(x$FrequenciesPath, x$Label)
+  freqs <- full_join(freqs, t)
+}
+
+tar <- lapply(freqs, get_setsizes)
+
+fmeta$MeanSetSize <- foreach(x=iter(fmeta, by='row')) %do% round(mean(setsizes[[x$Label]]$setsize), 2)
+fmeta$MedianSetSize <- foreach(x=iter(fmeta, by='row')) %do% round(median(setsizes[[x$Label]]$setsize), 2)
+
 ```
 
-You can also embed plots, for example:
-
+# Data Sets
 ```{r, echo=FALSE}
-plot(cars)
+kable(select(fmeta, Label, Subjects, Year, FullName))
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Set Size Info
+```{r, echo=FALSE}
+kable(select(fmeta, Label, MeanSetSize, MedianSetSize))
+```
+
+
+## Target Info
+```{r, echo=FALSE}
+
+kable(select(fmeta, Label, MeanSetSize, MedianSetSize))
+```
+### Individual Targets
+```{r, echo=FALSE}
+
+fmeta$MeanSetSize <- foreach(x=iter(fmeta, by='row')) %do% round(mean(setsizes[[x$Label]]$setsize), 2)
+
+targets <- unique(freqs[1]$Target)
+
+foreach(i=1:length(targets)) %do% {
+  t <- targets[i]
+  # setsizes[['tek']]$setsize
+}
+
+```
+
+# Info
