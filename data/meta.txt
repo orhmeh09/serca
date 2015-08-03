@@ -1,4 +1,4 @@
-Label	FullName	Institution	Year	Subjects	FrequenciesPath
+Label	Description	Institution	Year	Subjects	FrequencyPath
 tem	Tekcan (Subset of 100 targets)	Bogazici	2003	100	data/frequency/tem.txt
 umi	Umit	Bilgi	2015	104	data/frequency/umi.txt
 onl	Online	Bilgi	2015	52 	data/frequency/onl.txt
