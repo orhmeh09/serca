@@ -1,301 +1,301 @@
-Label	Target	SetSize
-onl	altın	10
-onl	alıntı	10
-onl	asker	10
-onl	atom	9
-onl	avuç	5
-onl	ayıp	9
-onl	açlık	7
-onl	bacak	9
-onl	balık	7
-onl	barınak	6
-onl	başıboş	9
-onl	belge	9
-onl	bilişim	6
-onl	boğa	9
-onl	büro	6
-onl	cevap	3
-onl	delik	8
-onl	dinamik	9
-onl	dizgin	3
-onl	duygulu	11
-onl	elem	6
-onl	erozyon	6
-onl	esinti	4
-onl	ev	6
-onl	eşya	6
-onl	gelin	6
-onl	geçerlik	4
-onl	giysi	6
-onl	gülüş	8
-onl	gıcırtı	2
-onl	hasar	6
-onl	hata	6
-onl	hayat	9
-onl	hayvan	9
-onl	haz	9
-onl	hoşnut	6
-onl	hukuk	7
-onl	hüzün	10
-onl	hırçınlık	9
-onl	imza	9
-onl	inanç	6
-onl	iyilik	7
-onl	iğde	7
-onl	kapı	11
-onl	kas	5
-onl	katil	8
-onl	kayıp	8
-onl	kuş	9
-onl	külhan	6
-onl	kırmızı	8
-onl	lezzet	4
-onl	medya	5
-onl	meraklı	10
-onl	metal	11
-onl	mineral	6
-onl	müftülük	7
-onl	nezle	7
-onl	oksijen	9
-onl	papatya	6
-onl	para	10
-onl	parke	7
-onl	paslı	6
-onl	pencere	8
-onl	peşinatsız	7
-onl	pire	7
-onl	pomat	7
-onl	radyo	8
-onl	sadık	7
-onl	sazlık	8
-onl	semer	4
-onl	serin	6
-onl	sofra	7
-onl	solo	9
-onl	soğan	6
-onl	standart	11
-onl	suç	5
-onl	süresiz	7
-onl	tabanca	7
-onl	takoz	5
-onl	tane	5
-onl	tanıtım	7
-onl	televizyon	10
-onl	toz	10
-onl	uçak	8
-onl	vali	10
-onl	vatan	4
-onl	virüs	5
-onl	yama	6
-onl	yarış	4
-onl	yatsı	3
-onl	yeni	9
-onl	yoga	6
-onl	yüzük	6
-onl	zaman	7
-onl	çehre	6
-onl	çömlek	5
-onl	övgü	8
-onl	özet	7
-onl	özlem	6
-onl	şiddetli	10
-tem	altın	13
-tem	alıntı	14
-tem	asker	17
-tem	atom	14
-tem	avuç	8
-tem	ayıp	21
-tem	açlık	12
-tem	bacak	20
-tem	balık	15
-tem	barınak	10
-tem	başıboş	10
-tem	belge	14
-tem	bilişim	9
-tem	boğa	10
-tem	büro	12
-tem	cevap	8
-tem	delik	15
-tem	dinamik	15
-tem	dizgin	6
-tem	duygulu	16
-tem	elem	8
-tem	erozyon	8
-tem	esinti	12
-tem	ev	9
-tem	eşya	11
-tem	gelin	10
-tem	geçerlik	9
-tem	giysi	18
-tem	gülüş	14
-tem	gıcırtı	7
-tem	hasar	10
-tem	hata	15
-tem	hayat	16
-tem	hayvan	11
-tem	haz	12
-tem	hoşnut	12
-tem	hukuk	16
-tem	hüzün	14
-tem	hırçınlık	13
-tem	imza	19
-tem	inanç	11
-tem	iyilik	16
-tem	iğde	9
-tem	kapı	19
-tem	kas	21
-tem	katil	14
-tem	kayıp	14
-tem	kuş	18
-tem	külhan	9
-tem	kırmızı	15
-tem	lezzet	8
-tem	medya	10
-tem	meraklı	21
-tem	metal	18
-tem	mineral	12
-tem	müftülük	10
-tem	nezle	9
-tem	oksijen	11
-tem	papatya	12
-tem	para	14
-tem	parke	15
-tem	paslı	8
-tem	pencere	12
-tem	peşinatsız	10
-tem	pire	12
-tem	pomat	11
-tem	radyo	9
-tem	sadık	13
-tem	sazlık	16
-tem	semer	4
-tem	serin	21
-tem	sofra	10
-tem	solo	11
-tem	soğan	7
-tem	standart	19
-tem	suç	12
-tem	süresiz	11
-tem	tabanca	9
-tem	takoz	12
-tem	tane	14
-tem	tanıtım	14
-tem	televizyon	16
-tem	toz	16
-tem	uçak	17
-tem	vali	12
-tem	vatan	10
-tem	virüs	7
-tem	yama	16
-tem	yarış	17
-tem	yatsı	5
-tem	yeni	14
-tem	yoga	13
-tem	yüzük	11
-tem	zaman	13
-tem	çehre	11
-tem	çömlek	10
-tem	övgü	16
-tem	özet	11
-tem	özlem	16
-tem	şiddetli	21
-umi	altın	15
-umi	alıntı	17
-umi	asker	13
-umi	atom	18
-umi	avuç	8
-umi	ayıp	17
-umi	açlık	15
-umi	bacak	15
-umi	balık	17
-umi	barınak	7
-umi	başıboş	18
-umi	belge	16
-umi	bilişim	10
-umi	boğa	13
-umi	büro	9
-umi	cevap	4
-umi	delik	16
-umi	dinamik	14
-umi	dizgin	6
-umi	duygulu	16
-umi	elem	9
-umi	erozyon	9
-umi	esinti	7
-umi	ev	16
-umi	eşya	18
-umi	gelin	10
-umi	geçerlik	9
-umi	giysi	13
-umi	gülüş	15
-umi	gıcırtı	6
-umi	hasar	10
-umi	hata	10
-umi	hayat	15
-umi	hayvan	11
-umi	haz	11
-umi	hoşnut	8
-umi	hukuk	11
-umi	hüzün	16
-umi	hırçınlık	20
-umi	imza	18
-umi	inanç	10
-umi	iyilik	13
-umi	iğde	10
-umi	kapı	22
-umi	kas	13
-umi	katil	14
-umi	kayıp	16
-umi	kuş	16
-umi	külhan	9
-umi	kırmızı	14
-umi	lezzet	7
-umi	medya	13
-umi	meraklı	17
-umi	metal	16
-umi	mineral	9
-umi	müftülük	12
-umi	nezle	11
-umi	oksijen	11
-umi	papatya	14
-umi	para	21
-umi	parke	13
-umi	paslı	8
-umi	pencere	11
-umi	peşinatsız	14
-umi	pire	11
-umi	pomat	6
-umi	radyo	13
-umi	sadık	16
-umi	sazlık	16
-umi	semer	3
-umi	serin	11
-umi	sofra	10
-umi	solo	14
-umi	soğan	9
-umi	standart	19
-umi	suç	8
-umi	süresiz	13
-umi	tabanca	14
-umi	takoz	15
-umi	tane	9
-umi	tanıtım	14
-umi	televizyon	14
-umi	toz	19
-umi	uçak	19
-umi	vali	17
-umi	vatan	11
-umi	virüs	8
-umi	yama	14
-umi	yarış	10
-umi	yatsı	9
-umi	yeni	13
-umi	yoga	13
-umi	yüzük	11
-umi	zaman	15
-umi	çehre	8
-umi	çömlek	15
-umi	övgü	14
-umi	özet	15
-umi	özlem	14
-umi	şiddetli	20
+Label	Target	SetSize	Idio	Totals
+umi	altın	15	18	33
+tem	altın	13	16	29
+onl	altın	10	16	26
+umi	alıntı	17	29	46
+tem	alıntı	14	24	38
+onl	alıntı	10	23	33
+tem	asker	17	15	32
+umi	asker	13	42	55
+onl	asker	10	19	29
+umi	atom	18	21	39
+tem	atom	14	14	28
+onl	atom	9	9	18
+tem	avuç	8	10	18
+umi	avuç	8	30	38
+onl	avuç	5	21	26
+tem	ayıp	21	29	50
+umi	ayıp	17	35	52
+onl	ayıp	9	29	38
+umi	açlık	15	30	45
+tem	açlık	12	12	24
+onl	açlık	7	20	27
+tem	bacak	20	7	27
+umi	bacak	15	27	42
+onl	bacak	9	12	21
+umi	balık	17	28	45
+tem	balık	15	24	39
+onl	balık	7	22	29
+tem	barınak	10	10	20
+umi	barınak	7	23	30
+onl	barınak	6	10	16
+umi	başıboş	18	26	44
+tem	başıboş	10	29	39
+onl	başıboş	9	13	22
+umi	belge	16	23	39
+tem	belge	14	29	43
+onl	belge	9	15	24
+umi	bilişim	10	23	33
+tem	bilişim	9	6	15
+onl	bilişim	6	10	16
+umi	boğa	13	14	27
+tem	boğa	10	11	21
+onl	boğa	9	7	16
+tem	büro	12	21	33
+umi	büro	9	25	34
+onl	büro	6	16	22
+tem	cevap	8	13	21
+umi	cevap	4	23	27
+onl	cevap	3	9	12
+umi	delik	16	37	53
+tem	delik	15	34	49
+onl	delik	8	27	35
+tem	dinamik	15	21	36
+umi	dinamik	14	37	51
+onl	dinamik	9	21	30
+tem	dizgin	6	16	22
+umi	dizgin	6	28	34
+onl	dizgin	3	8	11
+tem	duygulu	16	19	35
+umi	duygulu	16	37	53
+onl	duygulu	11	20	31
+umi	elem	9	21	30
+tem	elem	8	21	29
+onl	elem	6	16	22
+umi	erozyon	9	16	25
+tem	erozyon	8	16	24
+onl	erozyon	6	9	15
+tem	esinti	12	11	23
+umi	esinti	7	19	26
+onl	esinti	4	11	15
+umi	ev	16	25	41
+tem	ev	9	21	30
+onl	ev	6	24	30
+umi	eşya	18	32	50
+tem	eşya	11	24	35
+onl	eşya	6	29	35
+tem	gelin	10	12	22
+umi	gelin	10	9	19
+onl	gelin	6	9	15
+tem	geçerlik	9	51	60
+umi	geçerlik	9	47	56
+onl	geçerlik	4	29	33
+tem	giysi	18	17	35
+umi	giysi	13	24	37
+onl	giysi	6	14	20
+umi	gülüş	15	23	38
+tem	gülüş	14	18	32
+onl	gülüş	8	15	23
+tem	gıcırtı	7	10	17
+umi	gıcırtı	6	11	17
+onl	gıcırtı	2	9	11
+tem	hasar	10	17	27
+umi	hasar	10	27	37
+onl	hasar	6	12	18
+tem	hata	15	29	44
+umi	hata	10	32	42
+onl	hata	6	21	27
+tem	hayat	16	22	38
+umi	hayat	15	35	50
+onl	hayat	9	16	25
+tem	hayvan	11	25	36
+umi	hayvan	11	30	41
+onl	hayvan	9	15	24
+tem	haz	12	22	34
+umi	haz	11	23	34
+onl	haz	9	15	24
+tem	hoşnut	12	5	17
+umi	hoşnut	8	29	37
+onl	hoşnut	6	14	20
+tem	hukuk	16	NA	NA
+umi	hukuk	11	16	27
+onl	hukuk	7	18	25
+umi	hüzün	16	20	36
+tem	hüzün	14	27	41
+onl	hüzün	10	15	25
+umi	hırçınlık	20	29	49
+tem	hırçınlık	13	28	41
+onl	hırçınlık	9	25	34
+tem	imza	19	14	33
+umi	imza	18	41	59
+onl	imza	9	27	36
+tem	inanç	11	22	33
+umi	inanç	10	21	31
+onl	inanç	6	11	17
+tem	iyilik	16	20	36
+umi	iyilik	13	22	35
+onl	iyilik	7	16	23
+umi	iğde	10	24	34
+tem	iğde	9	22	31
+onl	iğde	7	21	28
+umi	kapı	22	12	34
+tem	kapı	19	11	30
+onl	kapı	11	16	27
+tem	kas	21	15	36
+umi	kas	13	21	34
+onl	kas	5	17	22
+tem	katil	14	19	33
+umi	katil	14	23	37
+onl	katil	8	16	24
+umi	kayıp	16	33	49
+tem	kayıp	14	18	32
+onl	kayıp	8	29	37
+tem	kuş	18	18	36
+umi	kuş	16	22	38
+onl	kuş	9	12	21
+tem	külhan	9	13	22
+umi	külhan	9	14	23
+onl	külhan	6	11	17
+tem	kırmızı	15	23	38
+umi	kırmızı	14	33	47
+onl	kırmızı	8	21	29
+tem	lezzet	8	12	20
+umi	lezzet	7	25	32
+onl	lezzet	4	14	18
+umi	medya	13	20	33
+tem	medya	10	22	32
+onl	medya	5	21	26
+tem	meraklı	21	16	37
+umi	meraklı	17	37	54
+onl	meraklı	10	21	31
+tem	metal	18	11	29
+umi	metal	16	34	50
+onl	metal	11	20	31
+tem	mineral	12	14	26
+umi	mineral	9	15	24
+onl	mineral	6	11	17
+umi	müftülük	12	35	47
+tem	müftülük	10	18	28
+onl	müftülük	7	20	27
+umi	nezle	11	8	19
+tem	nezle	9	4	13
+onl	nezle	7	11	18
+tem	oksijen	11	8	19
+umi	oksijen	11	16	27
+onl	oksijen	9	14	23
+umi	papatya	14	19	33
+tem	papatya	12	13	25
+onl	papatya	6	20	26
+umi	para	21	32	53
+tem	para	14	33	47
+onl	para	10	23	33
+tem	parke	15	12	27
+umi	parke	13	20	33
+onl	parke	7	17	24
+tem	paslı	8	19	27
+umi	paslı	8	19	27
+onl	paslı	6	12	18
+tem	pencere	12	9	21
+umi	pencere	11	27	38
+onl	pencere	8	21	29
+umi	peşinatsız	14	22	36
+tem	peşinatsız	10	22	32
+onl	peşinatsız	7	21	28
+tem	pire	12	9	21
+umi	pire	11	13	24
+onl	pire	7	13	20
+tem	pomat	11	12	23
+onl	pomat	7	9	16
+umi	pomat	6	19	25
+umi	radyo	13	17	30
+tem	radyo	9	21	30
+onl	radyo	8	13	21
+umi	sadık	16	19	35
+tem	sadık	13	8	21
+onl	sadık	7	18	25
+tem	sazlık	16	16	32
+umi	sazlık	16	31	47
+onl	sazlık	8	17	25
+onl	semer	4	13	17
+tem	semer	4	8	12
+umi	semer	3	16	19
+tem	serin	21	17	38
+umi	serin	11	31	42
+onl	serin	6	19	25
+tem	sofra	10	12	22
+umi	sofra	10	12	22
+onl	sofra	7	11	18
+umi	solo	14	20	34
+tem	solo	11	15	26
+onl	solo	9	11	20
+umi	soğan	9	21	30
+tem	soğan	7	16	23
+onl	soğan	6	16	22
+tem	standart	19	23	42
+umi	standart	19	32	51
+onl	standart	11	19	30
+tem	suç	12	9	21
+umi	suç	8	24	32
+onl	suç	5	17	22
+umi	süresiz	13	26	39
+tem	süresiz	11	17	28
+onl	süresiz	7	18	25
+umi	tabanca	14	20	34
+tem	tabanca	9	13	22
+onl	tabanca	7	21	28
+umi	takoz	15	29	44
+tem	takoz	12	13	25
+onl	takoz	5	26	31
+tem	tane	14	14	28
+umi	tane	9	27	36
+onl	tane	5	18	23
+tem	tanıtım	14	17	31
+umi	tanıtım	14	34	48
+onl	tanıtım	7	14	21
+tem	televizyon	16	12	28
+umi	televizyon	14	28	42
+onl	televizyon	10	16	26
+umi	toz	19	19	38
+tem	toz	16	22	38
+onl	toz	10	19	29
+umi	uçak	19	26	45
+tem	uçak	17	22	39
+onl	uçak	8	21	29
+umi	vali	17	32	49
+tem	vali	12	16	28
+onl	vali	10	24	34
+umi	vatan	11	21	32
+tem	vatan	10	18	28
+onl	vatan	4	19	23
+umi	virüs	8	20	28
+tem	virüs	7	13	20
+onl	virüs	5	13	18
+tem	yama	16	16	32
+umi	yama	14	39	53
+onl	yama	6	30	36
+tem	yarış	17	15	32
+umi	yarış	10	26	36
+onl	yarış	4	23	27
+umi	yatsı	9	16	25
+tem	yatsı	5	12	17
+onl	yatsı	3	8	11
+tem	yeni	14	22	36
+umi	yeni	13	26	39
+onl	yeni	9	12	21
+tem	yoga	13	8	21
+umi	yoga	13	29	42
+onl	yoga	6	24	30
+tem	yüzük	11	13	24
+umi	yüzük	11	18	29
+onl	yüzük	6	7	13
+umi	zaman	15	19	34
+tem	zaman	13	25	38
+onl	zaman	7	14	21
+tem	çehre	11	8	19
+umi	çehre	8	15	23
+onl	çehre	6	8	14
+umi	çömlek	15	19	34
+tem	çömlek	10	21	31
+onl	çömlek	5	16	21
+tem	övgü	16	24	40
+umi	övgü	14	43	57
+onl	övgü	8	22	30
+umi	özet	15	23	38
+tem	özet	11	19	30
+onl	özet	7	12	19
+tem	özlem	16	13	29
+umi	özlem	14	26	40
+onl	özlem	6	23	29
+tem	şiddetli	21	22	43
+umi	şiddetli	20	37	57
+onl	şiddetli	10	25	35

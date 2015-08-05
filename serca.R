@@ -45,19 +45,12 @@ rank_frequencies <- function(frequencies) {
 nsubjects <- function(meta, label) {
   meta %>% filter(Label==label) %>% select(Subjects)
 }
-get_setsizes <- function(frequencies, meta) {
+get_setsizes <- function(frequencies) {
   setsizes <- frequencies %>% filter(n > 1, Assoc != '?') %>% group_by(Label, Target) %>% summarise(SetSize=n()) %>% arrange(Target, Label)
   idios <- frequencies %>% filter(n == 1) %>% group_by(Label, Target) %>% summarise(Idio=n()) %>% arrange(Target, Label)
   setsizes <- setsizes %>% left_join(idios)
-
-  
-  setsizes <- setsizes %>% mutate(Total=SetSize+Idio)
-  
-  
-  frequencies %>% left_join(select(meta, Label, Subjects))
-  blanks <- setsizes %>% mutate(Blanks =  )
-  setsizes <- setsizes %>% left_join(blanks) %>% mutate(Blanks= replace(Blanks, is.na(Blanks), 0))
-  setsizes <- setsizes %>% arrange(Target, Label, SetSize, )
+  setsizes <- setsizes %>% mutate(Totals=SetSize+Idio)
+  setsizes <- setsizes %>% arrange(Target, Label, SetSize)
   return(setsizes)
 }
 
