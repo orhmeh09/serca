@@ -7,70 +7,28 @@ output: html_document
 ```{r, echo=FALSE}
 library(knitr)
 library(iterators)
-library(magrittr)
-library(dplyr)
-library(tidyr)
 library(foreach)
-
-# Load metadata
-fmeta <- tbl_df(read.delim('data/meta.txt', stringsAsFactors = FALSE, fileEncoding = "UTF-8"))
-labels = unique(select(fmeta, Label))
-
-# Load frequency tables
-frequencies <- foreach(x = iter(fmeta, by='row'),
-        .combine = rbind
-        ) %do% {
-            tbl_df(read.delim(x$FrequencyPath, stringsAsFactors = FALSE, fileEncoding="UTF-8"))  %>%
-            arrange(Target, desc(n), Assoc) %>%
-            mutate(Label = x$Label) %>%
-            group_by(Label, Target) %>%
-            mutate(Rank = dense_rank(desc(n)), 
-                   RankMax=rank(n, ties.method = "max"),
-                   Probability=round((1/(sum(n)/n)), 3)
-            )
-}
+source("serca.R")
 
 
-# Calculate set sizes
-setsizes <- foreach(x = iter(fmeta, by='row'),
-                    .combine = rbind
-                    ) %do% {
-                      frequencies %>% filter(Label == x$Label, n > 1, Assoc != '?') %>%
-                      group_by(Target) %>%
-                        summarise(SetSize=n()) %>%
-                        mutate(Label = x$Label)
-}
+set_os_locales()
+meta <- load_meta('data/datasets.txt')
 
-
-
-# Calculate set size statistics
-
-MeanSetSizes <- foreach(x = iter(fmeta, by='row')) %do% {
-  setsizes %>% filter(Label == x$Label) %>% summarise(round(mean(SetSize), 2))
-}
-MedianSetSizes <- foreach(x = iter(fmeta, by='row')) %do% {
-  setsizes %>% filter(Label == x$Label) %>% summarise(round(median(SetSize), 2))
-}
-SetSizeSDs <- foreach(x = iter(fmeta, by='row')) %do% {
-  setsizes %>% filter(Label == x$Label) %>% summarise(round(sd(SetSize), 2))
-}
-
-fmeta$MeanSetSize <- as.vector(MeanSetSizes)
-fmeta$MedianSetSize <- as.vector(MedianSetSizes)
-fmeta$SetSizeSD <- as.vector(SetSizeSDs)
+frequencies <- tbl_df(read.delim('data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+setsizes <- tbl_df(read.delim('data/setsizes.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+setsizesStats <- tbl_df(read.delim('data/setsizes_stats.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
 
 ```
 
 # Data Sets
 ```{r, echo=FALSE}
-kable(select(fmeta, Label, Description, Year, Subjects))
+kable(meta)
 ```
 
 ## Set Size Info
 ```{r, echo=FALSE}
-kable(select(fmeta, Label, MeanSetSize, MedianSetSize, SetSizeSD))
-ss <- spread(setsizes, Label, SetSize)
-kable(ss)
+kable(setsizesStats)
+
 ```
 
 -------------
@@ -78,19 +36,19 @@ kable(ss)
 ## Target Info
 ```{r, echo=FALSE}
 
-targets <- unique(select(setsizes, Target))
-ttables <- foreach(t = iter(targets, by='row')) %do% {
-  foreach(m = iter(fmeta, by='row')) %do% {
-   filter(frequencies, Label==m$Label, Target==t$Target, n > 1) %>% top_n(n, n = 3) %>% ungroup() %>% arrange(Label, Target, desc(n), Assoc)
-    }
-}
-ttables <- unlist(ttables, recursive = FALSE)
+#targets <- unique(select(setsizes, Target))
+#ttables <- foreach(t = iter(targets, by='row')) %do% {
+#  foreach(m = iter(fmeta, by='row')) %do% {
+#   filter(frequencies, Label==m$Label, Target==t$Target, n > 1) %>% top_n(n, n = 3) %>% ungroup() %>% arrange(Label, Target, desc(n), #Assoc)
+#    }
+#}
+#ttables <- unlist(ttables, recursive = FALSE)
 ```
 
 ```{r, echo=FALSE, results='asis'}
-for (i in 1:length(ttables)) {
-    print(kable(ttables[[i]]))
-}
+#for (i in 1:length(ttables)) {
+#    print(kable(ttables[[i]]))
+#}
 
 
 ```
