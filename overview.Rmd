@@ -4,10 +4,13 @@ author: "Altan"
 date: "August 1, 2015"
 output: html_document
 ---
-```{r, echo=FALSE, results="hide"}
+```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
 library(knitr)
 library(iterators)
 library(foreach)
+library(ggplot2)
+library(GGally)
+library(DT)
 source("serca.R")
 
 
@@ -25,10 +28,7 @@ setsizesStats <- tbl_df(read.delim('data/setsizes_stats.txt', stringsAsFactors =
 kable(select(meta, -FrequencyPath))
 ```
 
-## Set Size Info
-```{r SetSizesStats, echo=FALSE}
-kable(setsizesStats)
-```
+
 
 # Analyses
 ## Reliability
@@ -42,28 +42,22 @@ kable(means, digits = 2, caption = "Mean probabilities of first response")
 
 kable(cor(top1 %>% select(tem, umi, onl)), digits = 2, caption = "Correlations of first response probabilities")
 
+ggpairs(top1 %>% select(tem, umi, onl), title = "Correlations of first response probabilitiess")
 
+```
+-------
+
+## Set Size Info
+```{r SetSizesStats, echo=FALSE}
+kable(setsizesStats)
 ```
 
 
-## Target Info
-```{r, echo=FALSE}
+```{r SetSizeTable, echo=FALSE}
+t <- setsizes %>% select(Label, Target, SetSize) %>% spread(Label, SetSize)
 
-
-#targets <- unique(select(setsizes, Target))
-#ttables <- foreach(t = iter(targets, by='row')) %do% {
-#  foreach(m = iter(fmeta, by='row')) %do% {
-#   filter(frequencies, Label==m$Label, Target==t$Target, n > 1) %>% top_n(n, n = 3) %>% ungroup() %>% arrange(Label, Target, desc(n), #Assoc)
-#    }
-#}
-#ttables <- unlist(ttables, recursive = FALSE)
+library(DT)
+DT::datatable(t)
 ```
 
-```{r, echo=FALSE, results='asis'}
-#for (i in 1:length(ttables)) {
-#    print(kable(ttables[[i]]))
-#}
-
-
-```
 
