@@ -4,7 +4,7 @@ author: "Altan"
 date: "August 1, 2015"
 output: html_document
 ---
-```{r, echo=FALSE}
+```{r, echo=FALSE, results="hide"}
 library(knitr)
 library(iterators)
 library(foreach)
@@ -21,20 +21,34 @@ setsizesStats <- tbl_df(read.delim('data/setsizes_stats.txt', stringsAsFactors =
 ```
 
 # Data Sets
-```{r, echo=FALSE}
-kable(meta)
+```{r DataSets, echo=FALSE}
+kable(select(meta, -FrequencyPath))
 ```
 
 ## Set Size Info
-```{r, echo=FALSE}
+```{r SetSizesStats, echo=FALSE}
 kable(setsizesStats)
+```
+
+# Analyses
+## Reliability
+
+```{r Reliability, echo=FALSE}
+top1 <- get_top_frequencies(frequencies)
+
+means <- top1 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
+
+kable(means, digits = 2, caption = "Mean probabilities of first response")
+
+kable(cor(top1 %>% select(tem, umi, onl)), digits = 2, caption = "Correlations of first response probabilities")
+
 
 ```
 
--------------
 
 ## Target Info
 ```{r, echo=FALSE}
+
 
 #targets <- unique(select(setsizes, Target))
 #ttables <- foreach(t = iter(targets, by='row')) %do% {

@@ -64,5 +64,16 @@ get_setsizes_stats <- function(setsizes) {
 get_blanks <- function(frequencies) {
   frequencies %>% filter(Assoc == '?') %>% group_by(Target, Label) %>% summarise(Blanks=sum(n))
 }
+
+get_top_frequencies <- function(frequencies) {
+  frequencies %>%
+    filter(Rank == 1) %>% 
+    group_by(Label, Target) %>% 
+    filter(row_number() == 1) %>%
+    select(Target, Label, Probability) %>% 
+    spread(Label, Probability) %>% 
+    select(Target, tem, umi, onl) %>% 
+    arrange(Target)
+}
 set_os_locales()
 
