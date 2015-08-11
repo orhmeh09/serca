@@ -1,6 +1,5 @@
 ---
 title: "Overview"
-author: "Altan"
 date: "August 1, 2015"
 output: html_document
 ---
@@ -40,24 +39,52 @@ means <- top1 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
 
 kable(means, digits = 2, caption = "Mean probabilities of first response")
 
-kable(cor(top1 %>% select(tem, umi, onl)), digits = 2, caption = "Correlations of first response probabilities")
-
 ggpairs(top1 %>% select(tem, umi, onl), title = "Correlations of first response probabilitiess")
 
 ```
+
 -------
 
+
 ## Set Size Info
-```{r SetSizesStats, echo=FALSE}
+Values are for associative set size (not blank & not idiosyncratic)
+```{r SetSizesStats, echo=FALSE, cache=TRUE}
 kable(setsizesStats)
 ```
 
 
-```{r SetSizeTable, echo=FALSE}
-t <- setsizes %>% select(Label, Target, SetSize) %>% spread(Label, SetSize)
+Below are the set sizes for each target. Use the search box to find a specific target.
 
-library(DT)
-DT::datatable(t)
+```{r SetSizeTable, echo=FALSE}
+ss <- setsizes %>% select(Label, Target, SetSize) %>% spread(Label, SetSize)
+DT::datatable(ss)
+```
+
+
+-------
+
+
+(Associative) Set size: number of different words provided as responses to a target word. Responses that are idiosyncratic are not counted as part of associative set size. So only responses coming from 2 or more participants consititute a word’s associative set size.
+
+
+```{r SetSizeCor, echo=FALSE, cache=TRUE}
+ggpairs(ss %>% select(umi, onl, tem), title = "Reliability for set size - correlation")
+
+```
+
+## ANOVA
+```{r AnovaTop6, echo=FALSE, cache=TRUE}
+top6 <- do_anova_top6(frequencies)
+print(summary(top6))
+```
+
+
+-------
+
+## New Words
+```{r NewWords, echo=FALSE}
+news <- tbl_df(read.delim('data/new_words.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+DT::datatable(news)
 ```
 
 

@@ -75,5 +75,41 @@ get_top_frequencies <- function(frequencies) {
     select(Target, tem, umi, onl) %>% 
     arrange(Target)
 }
-set_os_locales()
+
+do_anova_top6 <- function(frequencies) {
+  top6 <- frequencies %>% 
+    filter(Rank <= 6) %>%
+    group_by(Label, Target) %>%
+    filter(row_number() <= 6) %>%
+    mutate(RowNo = row_number()) %>%
+    ungroup() %>%
+    arrange(Target, Label, desc(Probability)) %>%
+    select(RowNo, Label, Target, Probability)
+  
+  top6$RowNo <- factor(top6$RowNo)
+  top6$Label <- factor(top6$Label)
+  top6$Target <- factor(top6$Target)
+  
+  #a <- aov(Probability ~ Label + Error(RowNo/Target), data=top6) # <- lm(Probability ~ Label + (RowNo/Target), data=top6) # ez <- lmer(Probability ~ Label + Target + RowNo + (1 | Target), data=top6)
+  a <- aov(Probability ~ RowNo * Label + Error(Target/RowNo), top6)
+  return (a)
+}
+
+do_new_words <- function(frequencies) {
+  f.onl <- frequencies %>% filter(Label=="onl")
+  f.umi <- frequencies %>% filter(Label=="umi")
+  f.tem <- frequencies %>% filter(Label=="tem")
+  
+  news <- rbind(f.umi, f.onl) %>% filter(n > 1 & Assoc != '?') %>% group_by(Label) %>%
+    anti_join(f.tem, by="Assoc") %>% ungroup() %>%
+    arrange(desc(Probability)) %>% select(Label, Target, Assoc, n, Strength=Probability)
+  
+  news.counts <- news %>% select(Label, Target, Assoc, n) %>% spread(Label, n, fill=0)
+  news.strengths <- news %>% select(Label, Target, Assoc, Strength) %>% spread(Label, Strength, fill=0.0)
+  news.counts <- news.counts %>% rename(n.onl = onl, n.umi = umi)
+  news.strengths <- news.strengths %>% rename(p.onl = onl, p.umi = umi)
+  news <- inner_join(news.counts, news.strengths) %>% select(Target, Assoc, p.onl, n.onl, p.umi, n.umi) %>% arrange(Target, Assoc)
+  return (news)
+}
+#set_os_locales()
 

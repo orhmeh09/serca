@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Rhistory
+overview_files
+overview_cache
+overview.html
+.~lock*
