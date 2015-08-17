@@ -1,0 +1,39 @@
+---
+title: "Notable Words"
+date: "August 17, 2015"
+output: 
+  html_document: 
+    fig_caption: yes
+    number_sections: no
+    theme: spacelab
+    toc: no
+---
+```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(DT)
+library(dplyr)
+library(tidyr)
+```
+
+[Back to Overview](overview.html)
+
+# Notable outliers 
+(non-idiosyncratic, Rank <= 3, abs(Diff) >= 1): Diff is in z-units, the difference of the mean score for that set of Targets for all Labels, with each standardized according to itself.
+
+```{r Notable, echo=FALSE, error=FALSE, warning=FALSE, message=FALSE}
+
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+
+f <- frequencies %>% filter(n >= 2 & Assoc != '?' & Rank <= 3) %>% group_by(Label, Target) %>% mutate(StdProp=scale(Probability))
+f <- f %>% group_by(Label, Target) %>% select(Label, Target, Assoc, StdProp) %>% spread(Label, StdProp, fill=0)
+f <- f %>% group_by(Target, Assoc) %>% mutate(M=(onl+tem+umi)/3)
+f <- f %>% group_by(Target) %>% mutate(d.onl = M-onl, d.tem = M-tem, d.umi=M-umi)
+f <- f %>% select(Target, Assoc, onl=d.onl, tem=d.tem, umi=d.umi) %>% gather(Label, Diff, onl, tem, umi)
+f <- f %>% filter(abs(Diff) >= 1) %>% mutate(Diff=round(Diff, digits = 2))
+f <- f %>% arrange(Target, Assoc, Label, Diff)
+f <- inner_join(f, select(frequencies, Target, Label, Assoc, Rank, Probability)) %>% select(Target, Assoc, Label, Rank, Probability, Diff)
+
+DT::datatable(f)
+```
+
+[Back to Overview](overview.html)
