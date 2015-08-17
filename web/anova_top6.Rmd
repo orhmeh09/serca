@@ -1,0 +1,51 @@
+---
+title: "New Associates"
+date: "August 17, 2015"
+output: 
+  html_document: 
+    fig_caption: yes
+    number_sections: no
+    theme: spacelab
+    toc: no
+---
+```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(ggplot2)
+library(GGally)
+library(DT)
+library(ez)
+
+source("../serca.R")
+
+set_os_locales()
+```
+
+[Back to Overview](overview.html)
+
+
+## ANOVA
+```{r AnovaTop6, echo=FALSE, cache=TRUE, warning=FALSE}
+
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+t <- frequencies %>% 
+    filter(Rank <= 6) %>%
+    group_by(Label, Target) %>%
+    filter(row_number() <= 6) %>%
+    mutate(RowNo = row_number()) %>%
+    ungroup() %>%
+    arrange(Target, Label, desc(Probability)) %>%
+    select(RowNo, Label, Target, Probability)
+
+t <- t %>% group_by(Label, Target) %>% mutate(Wid=paste(Label, Target, sep='.'))
+
+t$RowNo <- factor(t$RowNo)
+t$Label <- factor(t$Label)
+t$Target <- factor(t$Target)
+t$Wid <- factor(t$Wid)
+a <- ezANOVA(data=as.data.frame(t),dv=Probability, wid=.(Wid), within =.(RowNo), between = .(Label), detailed=F, type = 3)
+print(a)
+  
+```
+
+
+[Back to Overview](overview.html)

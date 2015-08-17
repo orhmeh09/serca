@@ -1,0 +1,63 @@
+---
+title: "Reliability"
+date: "August 17, 2015"
+output: 
+  html_document: 
+    fig_caption: yes
+    number_sections: no
+    theme: spacelab
+    toc: no
+---
+```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(ggplot2)
+library(GGally)
+library(DT)
+source("../serca.R")
+
+
+set_os_locales()
+
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+
+
+```
+
+[Back to Overview](overview.html)
+
+# Reliabilities/correlations by rank of response
+
+## No. 1
+```{r R1, echo=FALSE, warning=FALSE, cache=TRUE}
+top.1 <- get_top_frequencies(frequencies, 1)
+means.1<- top.1%>% select(tem, umi, onl) %>% summarise_each(funs(mean))
+kable(means.1, digits = 2, caption = "Mean probabilities of 1st response")
+ggpairs(top.1 %>% select(tem, umi, onl), title = "Correlations of 2nd response probabilities")
+```
+
+## No. 2
+```{r R2, echo=FALSE, warning=FALSE, cache=TRUE}
+top.2 <- get_top_frequencies(frequencies, 2)
+means.2 <- top.2 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
+kable(means.2, digits = 2, caption = "Mean probabilities of 2nd response")
+ggpairs(top.2 %>% select(tem, umi, onl), title = "Correlations of 2nd response probabilities")
+```
+
+## No. 3
+```{r R3, echo=FALSE, warning=FALSE, cache=TRUE}
+top.3 <- get_top_frequencies(frequencies, 3)
+means.3 <- top.3 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
+kable(means.3, digits = 2, caption = "Mean probabilities of 3rd response")
+ggpairs(top.3 %>% select(tem, umi, onl), title = "Correlations of 3rd response probabilities")
+```
+
+## No. 4
+```{r R4, echo=FALSE, warning=FALSE, cache=TRUE}
+top.4 <- get_top_frequencies(frequencies, 4)
+means.4 <- top.4 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
+kable(means.4, digits = 2, caption = "Mean probabilities of 4th response")
+ggpairs(top.4 %>% select(tem, umi, onl), title = "Correlations of 4th response probabilities")
+
+```
+
+[Back to Overview](overview.html)

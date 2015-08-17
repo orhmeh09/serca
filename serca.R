@@ -4,7 +4,7 @@ library(magrittr)
 library(dplyr)
 library(tidyr)
 library(foreach)
-
+library(reshape2)
 
 set_os_locales <- function() {
   if(.Platform$OS.type != "unix") {
@@ -65,9 +65,9 @@ get_blanks <- function(frequencies) {
   frequencies %>% filter(Assoc == '?') %>% group_by(Target, Label) %>% summarise(Blanks=sum(n))
 }
 
-get_top_frequencies <- function(frequencies) {
+get_top_frequencies <- function(frequencies, rank) {
   frequencies %>%
-    filter(Rank == 1) %>% 
+    filter(Rank == rank) %>% 
     group_by(Label, Target) %>% 
     filter(row_number() == 1) %>%
     select(Target, Label, Probability) %>% 
@@ -77,7 +77,7 @@ get_top_frequencies <- function(frequencies) {
 }
 
 do_anova_top6 <- function(frequencies) {
-  top6 <- frequencies %>% 
+  t <- frequencies %>% 
     filter(Rank <= 6) %>%
     group_by(Label, Target) %>%
     filter(row_number() <= 6) %>%
@@ -85,13 +85,14 @@ do_anova_top6 <- function(frequencies) {
     ungroup() %>%
     arrange(Target, Label, desc(Probability)) %>%
     select(RowNo, Label, Target, Probability)
-  
-  top6$RowNo <- factor(top6$RowNo)
-  top6$Label <- factor(top6$Label)
-  top6$Target <- factor(top6$Target)
+  t$RowNo <- factor(t$RowNo)
+  t$Label <- factor(t$Label)
+  t$Target <- factor(t$Target)
+  t <- tbl_df(t %>% mutate(RowNo = paste('R', RowNo, sep='')) %>% dcast(Label + Target ~ RowNo))
+
   
   #a <- aov(Probability ~ Label + Error(RowNo/Target), data=top6) # <- lm(Probability ~ Label + (RowNo/Target), data=top6) # ez <- lmer(Probability ~ Label + Target + RowNo + (1 | Target), data=top6)
-  a <- aov(Probability ~ RowNo * Label + Error(Target/RowNo), top6)
+  a <- aov(Probability ~ RowNo * Label + Error(Target/RowNo), t)
   return (a)
 }
 

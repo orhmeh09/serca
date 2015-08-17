@@ -1,0 +1,50 @@
+---
+title: "Set Sizes"
+date: "August 17, 2015"
+output: 
+  html_document: 
+    fig_caption: yes
+    number_sections: no
+    theme: spacelab
+    toc: yes
+---
+```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(iterators)
+library(foreach)
+library(ggplot2)
+library(GGally)
+library(DT)
+library(ez)
+
+source("../serca.R")
+
+set_os_locales()
+setsizes <- tbl_df(read.delim('../data/setsizes.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+setsizesStats <- tbl_df(read.delim('../data/setsizes_stats.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+```
+
+[Back to Overview](overview.html)
+
+## Set Size Stats
+Values are for associative set size (not blank & not idiosyncratic)
+```{r SetSizesStats, echo=FALSE, cache=TRUE}
+kable(setsizesStats)
+```
+
+## Set Sizes by Target
+Below are the set sizes for each target. Use the search box to find a specific target.
+
+```{r SetSizeTable, echo=FALSE}
+ss <- setsizes %>% select(Label, Target, SetSize) %>% spread(Label, SetSize)
+DT::datatable(ss)
+```
+
+## Set Size Reliability
+
+```{r SetSizeCor, echo=FALSE, cache=TRUE}
+ggpairs(ss %>% select(umi, onl, tem), title = "Reliability for set size - correlation")
+
+```
+
+[Back to Overview](overview.html)
