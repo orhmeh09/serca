@@ -1,0 +1,33 @@
+---
+title: "New Associates"
+date: "August 17, 2015"
+output: 
+  html_document: 
+    fig_caption: yes
+    number_sections: no
+    theme: spacelab
+    toc: no
+---
+```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(iterators)
+library(foreach)
+library(ggplot2)
+library(GGally)
+library(DT)
+library(ez)
+
+source("../serca.R")
+
+set_os_locales()
+```
+
+[Back to Overview](overview.html)
+
+# New Associates (non-idiosyncratic)
+```{r NewWords, echo=FALSE, cache=FALSE}
+news <- tbl_df(read.delim('../data/new_words.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+DT::datatable(news)
+```
+
+[Back to Overview](overview.html)
