@@ -31,10 +31,11 @@ kable(select(meta, -FrequencyPath))
 ```
 
 # Analyses
-* [Reliability](Reliability.html)
+* [Reliability](reliability.html)
 * [New Words](new_words.html)
 * [Set Sizes](set_sizes.html)
 * [ANOVA for Top 6](anova_top6.html)
+* [Notable assocs](notable.html)
 
 
 
