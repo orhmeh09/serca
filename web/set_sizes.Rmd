@@ -47,4 +47,12 @@ ggpairs(ss %>% select(umi, onl, tem), title = "Reliability for set size - correl
 
 ```
 
+## Set Size ANOVA
+
+```{r SetSizeAnova, echo=FALSE, cache=TRUE}
+a <- aov(SetSize ~ Label, setsizes)
+print(formula(a))
+print(summary(a))
+```
+
 [Back to Overview](overview.html)
