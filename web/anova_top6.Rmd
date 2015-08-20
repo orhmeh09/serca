@@ -1,5 +1,5 @@
 ---
-title: "New Associates"
+title: "ANOVA for Top 6"
 date: "August 17, 2015"
 output: 
   html_document: 
@@ -23,7 +23,7 @@ set_os_locales()
 [Back to Overview](overview.html)
 
 
-## ANOVA
+## ANOVA for Top 6
 ```{r AnovaTop6, echo=FALSE, cache=TRUE, warning=FALSE}
 
 frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
@@ -36,14 +36,17 @@ t <- frequencies %>%
     arrange(Target, Label, desc(Probability)) %>%
     select(RowNo, Label, Target, Probability)
 
-t <- t %>% group_by(Label, Target) %>% mutate(Wid=paste(Label, Target, sep='.'))
+t <- t %>% group_by(Label, Target)
 
 t$RowNo <- factor(t$RowNo)
 t$Label <- factor(t$Label)
 t$Target <- factor(t$Target)
-t$Wid <- factor(t$Wid)
-a <- ezANOVA(data=as.data.frame(t),dv=Probability, wid=.(Wid), within =.(RowNo), between = .(Label), detailed=F, type = 3)
-print(a)
+#t$Wid <- factor(t$Wid)
+#a <- ezANOVA(data=as.data.frame(t),dv=Probability, wid=.(Wid), within =.(RowNo), between = .(Label), detailed=F, type = 3)
+
+a <- aov(formula = Probability ~ RowNo + Label + (RowNo * Label), data = t)
+print(formula(a))
+print(summary(a))
   
 ```
 

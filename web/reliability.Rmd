@@ -32,7 +32,7 @@ frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = F
 top.1 <- get_top_frequencies(frequencies, 1)
 means.1<- top.1%>% select(tem, umi, onl) %>% summarise_each(funs(mean))
 kable(means.1, digits = 2, caption = "Mean probabilities of 1st response")
-ggpairs(top.1 %>% select(tem, umi, onl), title = "Correlations of 2nd response probabilities")
+ggpairs(top.1 %>% select(tem, umi, onl), title = "Correlations of 1st response probabilities")
 ```
 
 ## No. 2
@@ -40,7 +40,7 @@ ggpairs(top.1 %>% select(tem, umi, onl), title = "Correlations of 2nd response p
 top.2 <- get_top_frequencies(frequencies, 2)
 means.2 <- top.2 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
 kable(means.2, digits = 2, caption = "Mean probabilities of 2nd response")
-ggpairs(top.2 %>% select(tem, umi, onl), title = "Correlations of 2nd response probabilities")
+ggpairs(top.2 %>% select(tem, umi, onl), title = "Correlations of 2nd response probabilities" )
 ```
 
 ## No. 3
@@ -48,7 +48,7 @@ ggpairs(top.2 %>% select(tem, umi, onl), title = "Correlations of 2nd response p
 top.3 <- get_top_frequencies(frequencies, 3)
 means.3 <- top.3 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
 kable(means.3, digits = 2, caption = "Mean probabilities of 3rd response")
-ggpairs(top.3 %>% select(tem, umi, onl), title = "Correlations of 3rd response probabilities")
+ggpairs(top.3 %>% select(tem, umi, onl), title = "Correlations of 3rd response probabilities", params =)
 ```
 
 ## No. 4
