@@ -4,9 +4,9 @@ date: "August 1, 2015"
 output: 
   html_document: 
     fig_caption: yes
-    keep_md: yes
+    keep_md: no
     number_sections: yes
-    theme: readable
+    theme: spacelab
     toc: yes
 ---
 ```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
@@ -36,6 +36,7 @@ kable(select(meta, -FrequencyPath))
 * [Set Sizes](set_sizes.html)
 * [ANOVA for Top 6](anova_top6.html)
 * [Notable assocs](notable.html)
+* [Heterogeneity](heterog.html)
 
 
 
