@@ -1,0 +1,55 @@
+---
+title: "Heterogeneity of Responses"
+date: "August 21, 2015"
+output: 
+  html_document: 
+    fig_caption: yes
+    self_contained: no
+    theme: spacelab
+    toc: yes
+---
+```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(iterators)
+library(foreach)
+library(ggplot2)
+library(GGally)
+library(DT)
+library(ez)
+library(pastecs)
+
+source("../serca.R")
+
+set_os_locales()
+
+```
+
+[Back to Overview](overview.html)
+
+```{r FreqHeteroInit, echo=FALSE, cache=TRUE}
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+H <- frequencies %>% filter(Assoc != '?' & n > 1) %>% group_by(Label, Target) %>% summarise(H=-round(sum(Probability*log2(Probability)), 2))
+H.spread <- H %>% select(Label, Target, H) %>% spread(Label, H)
+```
+
+## Heterogeneity of responses
+As per De Deyne, Navarro, and Storms, 2013. Values filtered from  blank &  idiosyncratic.
+
+### Descriptives
+```{r HeteroDesc, echo=FALSE, cache=TRUE}
+kable(stat.desc(H.spread) %>% select(-Target), digits = 2)
+```
+
+### Individual values
+```{r HeteroVals, echo=FALSE}
+DT::datatable(H.spread)
+```
+
+### ANOVA
+```{r FreqHetero, echo=FALSE, cache=TRUE}
+anova.H <- aov(H ~ Label, H)
+print(formula(anova.H))
+print(summary(anova.H))
+```
+
+[Back to Overview](overview.html)
