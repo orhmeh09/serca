@@ -14,6 +14,7 @@ library(iterators)
 library(foreach)
 library(ggplot2)
 library(GGally)
+library(pastecs)
 library(DT)
 library(ez)
 
@@ -24,10 +25,27 @@ set_os_locales()
 
 [Back to Overview](overview.html)
 
+
+```{r NewWordsInit, echo=FALSE, cache=FALSE}
+news <- tbl_df(read.delim('../data/new_words.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+```
+
+
 # New Associates (non-idiosyncratic)
-```{r NewWords, echo=FALSE, cache=FALSE}
+```{r NewWordsDesc, echo=FALSE, cache=FALSE}
+new.umi <- news %>% filter(n.umi > 1) %>% select(Target, Assoc, n=n.umi, Probability=p.umi)
+new.onl <- news %>% filter(n.onl > 1) %>% select(Target, Assoc, n=n.onl, Probability=p.onl)
+
+new.umi <- new.umi %>% group_by(Target) %>% summarise(Count=n()) %>% select(New.Umi = Count)
+new.onl <- new.onl %>% group_by(Target) %>% summarise(Count=n()) %>% select(New.Onl = Count)
+kable(cbind(stat.desc(new.onl), stat.desc(new.umi)), digits=2)
+```
+
+
+```{r NewWordsTable, echo=FALSE, cache=FALSE}
 news <- tbl_df(read.delim('../data/new_words.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
 DT::datatable(news)
 ```
+
 
 [Back to Overview](overview.html)
