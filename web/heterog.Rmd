@@ -4,7 +4,6 @@ date: "August 21, 2015"
 output: 
   html_document: 
     fig_caption: yes
-    self_contained: no
     theme: spacelab
     toc: yes
 ---
@@ -33,7 +32,7 @@ H.spread <- H %>% select(Label, Target, H) %>% spread(Label, H)
 ```
 
 ## Heterogeneity of responses
-As per De Deyne, Navarro, and Storms, 2013. Values filtered from  blank &  idiosyncratic.
+As per De Deyne, Navarro, and Storms, 2013. Values filtered from blank &  idiosyncratic.
 
 ### Descriptives
 ```{r HeteroDesc, echo=FALSE, cache=TRUE}

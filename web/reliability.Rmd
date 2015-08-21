@@ -51,13 +51,4 @@ kable(means.3, digits = 2, caption = "Mean probabilities of 3rd response")
 ggpairs(top.3 %>% select(tem, umi, onl), title = "Correlations of 3rd response probabilities", params =)
 ```
 
-## No. 4
-```{r R4, echo=FALSE, warning=FALSE, cache=TRUE}
-top.4 <- get_top_frequencies(frequencies, 4)
-means.4 <- top.4 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
-kable(means.4, digits = 2, caption = "Mean probabilities of 4th response")
-ggpairs(top.4 %>% select(tem, umi, onl), title = "Correlations of 4th response probabilities")
-
-```
-
 [Back to Overview](overview.html)
