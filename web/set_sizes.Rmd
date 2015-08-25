@@ -9,50 +9,99 @@ output:
     toc: yes
 ---
 ```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
+
+library(multcomp)
+library(compute.es)
+library(pastecs)
+
 library(knitr)
-library(iterators)
-library(foreach)
-library(ggplot2)
-library(GGally)
-library(DT)
-library(ez)
+library(tidyr)
+library(dplyr)
+library(lsr)
 
-source("../serca.R")
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = TRUE, fileEncoding="UTF-8"))
+setsizes <- frequencies %>% filter(n > 1, Assoc != '?') %>% group_by(Label, Target) %>% summarise(SetSize=n()) %>% arrange(Target, Label)
+idios <- frequencies %>% filter(n == 1, Assoc != '?') %>% group_by(Label, Target) %>% summarise(Idio=n()) %>% arrange(Target, Label)
+blanks <- frequencies %>% filter(Assoc == '?') %>% group_by(Label, Target) %>% summarise(Blank=n()) %>% arrange(Target, Label)
+setsizes <- setsizes %>% left_join(idios)
+setsizes <- setsizes %>% left_join(blanks)
+setsizes <- setsizes %>% replace(is.na(.), 0)
+setsizes <- setsizes %>% mutate(AssocRatio=SetSize/(SetSize+Idio+Blank))
+setsizes <- setsizes %>% arrange(Target, Label, SetSize)
 
-set_os_locales()
-setsizes <- tbl_df(read.delim('../data/setsizes.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
-setsizesStats <- tbl_df(read.delim('../data/setsizes_stats.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+
+
+
 ```
 
 [Back to Overview](overview.html)
 
 ## Set Size Stats
 Values are for associative set size (not blank & not idiosyncratic)
-```{r SetSizesStats, echo=FALSE, cache=TRUE}
-kable(setsizesStats)
+```{r SetSizesStats, echo=FALSE, cache=FALSE}
+
+
+setsize.stats <- setsizes %>% select(Label, Target, SetSize) %>% spread(Label, SetSize) %>% select(-Target) %>% stat.desc() %>% round(2)
+kable(setsize.stats)
+
+assocratio.stats <- setsizes %>% select(Label, Target, AssocRatio) %>% spread(Label, AssocRatio) %>% select(-Target) %>% stat.desc() %>% round(2)
+kable(assocratio.stats)
+
 ```
 
 ## Set Sizes by Target
 Below are the set sizes for each target. Use the search box to find a specific target.
 
 ```{r SetSizeTable, echo=FALSE}
-ss <- setsizes %>% select(Label, Target, SetSize) %>% spread(Label, SetSize)
-DT::datatable(ss)
+setsizes.spread <- setsizes %>% select(Label, Target, SetSize) %>% spread(Label, SetSize)
+DT::datatable(setsizes.spread)
 ```
 
 ## Set Size Reliability
 
-```{r SetSizeCor, echo=FALSE, cache=TRUE}
-ggpairs(ss %>% select(umi, onl, tem), title = "Reliability for set size - correlation")
-
+```{r SetSizeCor, echo=FALSE, cache=FALSE}
+#ggpairs(ss %>% select(umi, onl, tem), title = "Reliability for set size - correlation")
+kable(cor(setsizes.spread %>% select(umi, onl, tem)), digits = 2)
 ```
 
 ## Set Size ANOVA
 
-```{r SetSizeAnova, echo=FALSE, cache=TRUE}
+```{r SetSizeAnova, echo=FALSE, cache=FALSE}
 a <- aov(SetSize ~ Label, setsizes)
 print(formula(a))
-print(summary(a))
+print(summary.lm(a))
+print(sprintf("R squared: %.2f / Adjusted R squared: %.2f", summary.lm(a)$r.squared, summary.lm(a)$adj.r.squared))
+print(etaSquared(a))
+a.Tukey <- glht(a, linfct = mcp(Label = "Tukey"))
+print(summary(a.Tukey))
+print(confint(a.Tukey))
+
+stat.onl <- as.list(setsize.stats$onl)
+names(stat.onl) <- rownames(setsize.stats)
+
+stat.umi <- as.list(setsize.stats$umi)
+names(stat.umi) <- rownames(setsize.stats)
+
+stat.tem <- as.list(setsize.stats$tem)
+names(stat.tem) <- rownames(setsize.stats)
+
+extract.d <- function(m) {
+  d <- list()
+  d$d <- m$d
+  d$var <- m$var.d
+  d$ci95 <- c(lower=m$l.d, upper=m$u.d)
+  return (d)
+}
+
+d.onl.umi <- extract.d(mes(stat.onl$mean, stat.umi$mean, stat.onl$std.dev, stat.umi$std.dev, stat.onl$nbr.val, stat.umi$nbr.val, verbose = FALSE))
+d.onl.tem <- extract.d(mes(stat.onl$mean, stat.tem$mean, stat.onl$std.dev, stat.tem$std.dev, stat.onl$nbr.val, stat.tem$nbr.val, verbose = FALSE))
+
+print("Cohen's d for onl-umi")
+print(d.onl.umi)
+print("Cohen's d for onl-tem")
+print(d.onl.tem)
+
+
 ```
 
 [Back to Overview](overview.html)
