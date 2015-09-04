@@ -1,24 +1,27 @@
 ---
 title: "Reliability"
-date: "August 17, 2015"
-output: 
-  html_document: 
+output:
+  html_document:
     fig_caption: yes
     number_sections: no
     theme: spacelab
     toc: no
+  word_document: default
+date: "August 17, 2015"
 ---
 ```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
 library(knitr)
 library(ggplot2)
 library(GGally)
 library(DT)
+library(dplyr)
 source("../serca.R")
 
 
 set_os_locales()
-
-frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+library(psych)
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = T, fileEncoding="UTF-8"))
+frequencies <- frequencies %>% mutate(Probability = logit(Probability))
 
 
 ```
@@ -28,27 +31,101 @@ frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = F
 # Reliabilities/correlations by rank of response
 
 ## No. 1
-```{r R1, echo=FALSE, warning=FALSE, cache=TRUE}
-top.1 <- get_top_frequencies(frequencies, 1)
-means.1<- top.1%>% select(tem, umi, onl) %>% summarise_each(funs(mean))
-kable(means.1, digits = 2, caption = "Mean probabilities of 1st response")
-ggpairs(top.1 %>% select(tem, umi, onl), title = "Correlations of 1st response probabilities")
+```{r R1, echo=FALSE, warning=FALSE, cache=FALSE}
+top.1 <- get_top_frequencies(frequencies, 1) %>% select(tem, umi, onl)
+means.1<- top.1%>% select(tem, umi, onl) %>% summarise_each(funs(mean)) %>% t()
+colnames(means.1) <- c('Mean response strength')
+kable(means.1, digits = 2)
+kable(cor(top.1), digits=2)
+
+#ggpairs(top.1 %>% select(tem, umi, onl), title = "Correlations of 1st response strengths")
 ```
 
 ## No. 2
-```{r R2, echo=FALSE, warning=FALSE, cache=TRUE}
-top.2 <- get_top_frequencies(frequencies, 2)
-means.2 <- top.2 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
-kable(means.2, digits = 2, caption = "Mean probabilities of 2nd response")
-ggpairs(top.2 %>% select(tem, umi, onl), title = "Correlations of 2nd response probabilities" )
+```{r R2, echo=FALSE, warning=FALSE, cache=FALSE}
+top.2 <- get_top_frequencies(frequencies, 2) %>% select(tem, umi, onl)
+means.2 <- top.2 %>% select(tem, umi, onl) %>% summarise_each(funs(mean) ) %>% t()
+colnames(means.2) <- c('Mean response strength')
+kable(means.2, digits = 2, align = 'r')
+kable(cor(top.2), digits=2)
+
+#ggpairs(top.2 %>% select(tem, umi, onl), title = "Correlations of 2nd response strengths" )
 ```
 
 ## No. 3
-```{r R3, echo=FALSE, warning=FALSE, cache=TRUE}
-top.3 <- get_top_frequencies(frequencies, 3)
-means.3 <- top.3 %>% select(tem, umi, onl) %>% summarise_each(funs(mean))
-kable(means.3, digits = 2, caption = "Mean probabilities of 3rd response")
-ggpairs(top.3 %>% select(tem, umi, onl), title = "Correlations of 3rd response probabilities", params =)
+```{r R3, echo=FALSE, warning=FALSE, cache=FALSE}
+top.3 <- get_top_frequencies(frequencies, 3) %>% select(tem, umi, onl)
+means.3 <- top.3 %>% summarise_each(funs(mean)) %>% t()
+colnames(means.3) <- c('Mean response strength')
+kable(means.3, digits = 2)
+#ggpairs(top.3 %>% select(tem, umi, onl), title = "Correlations of 3rd response strengths")
+kable(cor(top.3), digits=2)
+
+
 ```
 
+
+## No. 4
+```{r R4, echo=FALSE, warning=FALSE, cache=FALSE}
+mean.wna <- function(x) {
+  mean(x, na.rm = TRUE)
+}
+
+sd.wna <- function(x) {
+  sd(x, na.rm = TRUE)
+}
+top.4 <- get_top_frequencies(frequencies, 4) %>% select(tem, umi, onl)
+means.4 <- top.4 %>% summarise_each(funs(mean.wna)) %>% t()
+colnames(means.4) <- c('Mean response strength')
+kable(means.4, digits = 2)
+#ggpairs(top.3 %>% select(tem, umi, onl), title = "Correlations of 4th response strengths")
+kable(cor(top.4, use='complete'), digits=2)
+
+
+
+c1 <- cor(top.1, use="complete")
+c2 <- cor(top.2, use="complete")
+c3 <- cor(top.3, use="complete")
+c4 <- cor(top.4, use="complete")
+
+
+
+key.cors <- function(x) {
+  rn <- rownames(x)
+  cn <- colnames(x)
+  kc <- c(x[1,2], x[1,3], x[3,2])
+  names(kc) <- c(paste(rn[1], cn[2], sep='-'), paste(rn[1], cn[3], sep='-'), paste(rn[3], cn[2], sep='-'))
+  return(kc)
+}
+
+cm <- sapply(list(top.1, top.2, top.3, top.4), function(x) { key.cors(cor(x, use="complete"))}) %>% t
+cm <- cm %>% as.data.frame %>% mutate(Rank=row_number()) %>% gather(Sets, r, -Rank)
+levels(cm$Sets) <- list(`TS-Lab`="tem-umi", `TS-Online`="tem-onl", `Lab-Online`="onl-umi")
+
+#tci <- function(x) {t.test(x, na.action=na.omit)$conf.int}
+
+#means <- tops %>% group_by(Set, Rank) %>% summarise(Mean=mean(Probability, na.rm=TRUE), CiLo=tci(Probability)[1], CiUp=tci(Probability)[1])
+
+#pd = position_dodge(width=0.5)
+#maxlim <- ceiling(max(means$CiUp)*10)/10
+maxlim = 1.0
+pd = position_dodge(0.15)
+ggplot(data = cm, aes(x = Rank, y = r, group = Sets)) +
+  geom_line(aes(linetype=Sets, ymax=maxlim), position=pd) +
+  scale_linetype_manual(values=c('dashed', 'dotted', 'dotdash')) +
+  geom_point(aes(shape=Sets, fill=Sets, ymax=maxlim), size=4, position=pd) +
+  scale_shape_manual(values=c(24,24, 19)) +
+  scale_fill_manual(values=c("black", "white", "black")) +
+  theme_bw() +
+  theme(plot.title=element_text(face="bold", size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) +
+  ggtitle('Correlation of response probabilities across data sets, by rank')
+
+          
+  
+  
+  
+
+```
+#ggplot(data=ec, aes(x=Rank, y=r, group=Sets)) + geom_line(aes(linetype=Sets)) + scale_linetype_manual(values=c('dashed', 'dotted', 'dotdash')) + expand_limits(y=1) + #geom_point(aes(shape=Sets, fill=Sets), size=4) + scale_shape_manual(values=c(24,24, 19)) + scale_fill_manual(values=c("black", "white", "black")) + theme_bw() + #theme(plot.title=element_text(face="bold", size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) + ggtitle('Probability of response by rank, correlated #across data sets')
+#ggplot(data=fea, aes(x=Rank, y=Probability, group=Set)) + geom_point(aes(shape=Set, #fill=Set, ymax=0.4), size=4, position=position_dodge(width=0.5)) + #geom_errorbar(aes(ymin=LL, ymax=LU), width=.1, position=position_dodge(width=0.5))  + #scale_shape_manual(values=c(24,24, 19)) + scale_fill_manual(values=c("black", #"white", "black")) + theme_bw() + theme(plot.title=element_text(face="bold", #size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) + #ggtitle('Mean response probabilities for top six associates (CI 95%)')
 [Back to Overview](overview.html)

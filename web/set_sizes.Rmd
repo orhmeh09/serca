@@ -18,6 +18,7 @@ library(knitr)
 library(tidyr)
 library(dplyr)
 library(lsr)
+library(GGally)
 
 frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = TRUE, fileEncoding="UTF-8"))
 setsizes <- frequencies %>% filter(n > 1, Assoc != '?') %>% group_by(Label, Target) %>% summarise(SetSize=n()) %>% arrange(Target, Label)
@@ -60,7 +61,7 @@ DT::datatable(setsizes.spread)
 ## Set Size Reliability
 
 ```{r SetSizeCor, echo=FALSE, cache=FALSE}
-#ggpairs(ss %>% select(umi, onl, tem), title = "Reliability for set size - correlation")
+ggpairs(setsizes.spread %>% select(umi, onl, tem), title = "Reliability for set size - correlation", diag=list(continuous='density'), lower=list(continuous='smooth'), upper=list(continuous='cor'))
 kable(cor(setsizes.spread %>% select(umi, onl, tem)), digits = 2)
 ```
 
@@ -102,6 +103,18 @@ print("Cohen's d for onl-tem")
 print(d.onl.tem)
 
 
+
+setsizes <- setsizes %>% rename(Set=Label)
+levels(setsizes$Set) <- list(`TS`="tem", `Lab`="umi", `Online`="onl")
+ss.aov <- aov(log(SetSize) ~ Set, setsizes)
+ss.tuk <- glht(ss.aov, linfct=mcp(Set="Tukey"))
+ss.ci <- confint(ss.tuk)
+ggplot(ss.ci, aes(lhs, estimate)) + geom_linerange(aes(ymin = lwr, ymax=upr), data=ss.ci) + geom_point(aes(size=p), data=summary(ss.tuk)) + geom_point(shape=4, size=6) + geom_errorbar(aes(ymin=lwr, ymax=upr), width=0.25, data=ss.ci) + scale_size(trans="reverse") + geom_hline(linetype="dashed") +  theme_bw() + xlab("Data Sets") + ylab("Estimated mean difference") +
+    theme(plot.title=element_text(face="bold", size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) + ggtitle('Multiple comparisons of mean set size') + coord_flip() + theme(aspect.ratio=240/640)
+
+ggplot(data=setsizes, aes(x=SetSize, group=Set)) +  scale_linetype_discrete()+ geom_line(stat="density", na.rm = TRUE, aes(linetype=Set, y=..count..), fill=NA) + theme_bw() + theme(plot.title=element_text(face="bold", size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) + ggtitle('Distribution of set sizes') + xlab("Set Size") + ylab("Count") +  theme(aspect.ratio=240/640)
+
+                                                                                                                                                                                                                                                                                                                                                                         
 ```
 
 [Back to Overview](overview.html)

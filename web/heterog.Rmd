@@ -9,24 +9,25 @@ output:
 ---
 ```{r, echo=FALSE, results="hide", error=FALSE, warning=FALSE, message=FALSE}
 library(knitr)
-library(iterators)
-library(foreach)
 library(ggplot2)
 library(GGally)
 library(DT)
 library(ez)
+library(dplyr)
 library(pastecs)
+library(multcomp)
 
 source("../serca.R")
 
 set_os_locales()
 
-```
+
+
 
 [Back to Overview](overview.html)
 
 ```{r FreqHeteroInit, echo=FALSE, cache=TRUE}
-frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = TRUE, fileEncoding="UTF-8"))
 H <- frequencies %>% filter(Assoc != '?' & n > 1) %>% group_by(Label, Target) %>% summarise(H=-round(sum(Probability*log2(Probability)), 2))
 H.spread <- H %>% select(Label, Target, H) %>% spread(Label, H)
 ```
@@ -41,14 +42,32 @@ kable(stat.desc(H.spread) %>% select(-Target), digits = 2)
 
 ### Individual values
 ```{r HeteroVals, echo=FALSE}
-DT::datatable(H.spread)
+#DT::datatable(H.spread)
 ```
 
 ### ANOVA
-```{r FreqHetero, echo=FALSE, cache=TRUE}
-anova.H <- aov(H ~ Label, H)
+```{r FreqHeteroA, echo=FALSE, cache=TRUE}
+anova.H <- aov(H ~ Set, H)
 print(formula(anova.H))
 print(summary(anova.H))
+print(c("Omega square:", round(omega_sq(anova.H), 2)))
+ah.tuk <- glht(anova.H, linfct = mcp(Set="Tukey"))
+ah.ci <- confint(ah.tuk)
+gplot(ah.ci, aes(lhs, estimate)) + geom_linerange(aes(ymin = lwr, ymax=upr), data=ah.ci) + geom_point(aes(size=p), data=summary(ah.tuk)) + geom_point(shape=4, size=6) + geom_errorbar(aes(ymin=lwr, ymax=upr), width=0.25, data=ah.ci) + scale_size(trans="reverse") + geom_hline(linetype="dashed") +  theme_bw() + xlab("Data Sets") + ylab("Estimated mean difference") +
+    theme(plot.title=element_text(face="bold", size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) + ggtitle('Multiple comparisons of mean heterogeneity') + coord_flip() + theme(aspect.ratio=240/640)
+
+```
+
+## Correlation
+```{r FreqHetero, echo=FALSE, cache=FALSE}
+kable(H.spread %>% select(umi, onl, tem) %>% cor, digits=2)
+
+H <-  H %>% rename(Set=Label)
+levels(H$Set) <- list(`TS`="tem", `Lab`="umi", `Online`="onl")
+
+p <- ggplot(data=H, aes(x=H, group=Set)) +  scale_linetype_discrete()+ geom_line(stat="density", adjust=2.0, na.rm = TRUE, aes(linetype=Set, y=..count..), fill=NA) + theme_bw() + theme(plot.title=element_text(face="bold", size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) + ggtitle('Frequencies of response heterogeneity') + +theme(aspect.ratio=240/640)
+
+
 ```
 
 [Back to Overview](overview.html)

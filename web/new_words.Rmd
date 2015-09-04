@@ -27,7 +27,15 @@ set_os_locales()
 
 
 ```{r NewWordsInit, echo=FALSE, cache=FALSE}
-news <- tbl_df(read.delim('../data/new_words.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+#news <- tbl_df(read.delim('../data/new_words.txt', stringsAsFactors = T, fileEncoding="UTF-8"))
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = TRUE, fileEncoding="UTF-8"))
+asets <- frequencies %>% filter(Assoc != '?', n > 1)
+asets.tem <- asets %>% filter(Label=='tem')
+news <- asets %>% filter(Label != 'tem') %>% anti_join(asets.tem, by=c('Target', 'Assoc'))
+
+fni <- frequencies %>% filter(n > 1, Assoc != '?')
+distincts <- fni %>% group_by(Target) %>% distinct(Assoc)
+
 ```
 
 
@@ -39,11 +47,13 @@ new.onl <- news %>% filter(n.onl > 1) %>% select(Target, Assoc, n=n.onl, Probabi
 new.umi <- new.umi %>% group_by(Target) %>% summarise(Count=n()) %>% select(New.Umi = Count)
 new.onl <- new.onl %>% group_by(Target) %>% summarise(Count=n()) %>% select(New.Onl = Count)
 kable(cbind(stat.desc(new.onl), stat.desc(new.umi)), digits=2)
+news %>% group_by(Label, Target) %>% summarise(N=n()) %>% spread(Label, N, fill = 0) %>% select(-Target) %>% cor
 ```
 
 
 ```{r NewWordsTable, echo=FALSE, cache=FALSE}
-news <- tbl_df(read.delim('../data/new_words.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+news <- tbl_df(read.delim('../data/new_words.txt', stringsAsFactors = T, fileEncoding="UTF-8"))
+news %>% group_by(Label, Target) %>% summarise(N=n()) %>% spread(Label, N, fill = 0)
 DT::datatable(news)
 ```
 

@@ -26,7 +26,7 @@ set_os_locales()
 ## ANOVA for Top 6
 ```{r AnovaTop6, echo=FALSE, cache=TRUE, warning=FALSE}
 
-frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = FALSE, fileEncoding="UTF-8"))
+frequencies <- tbl_df(read.delim('../data/frequencies.txt', stringsAsFactors = TRUE, fileEncoding="UTF-8"))
 t <- frequencies %>% 
     filter(Rank <= 6) %>%
     group_by(Label, Target) %>%
@@ -47,8 +47,70 @@ t$Target <- factor(t$Target)
 a <- aov(formula = Probability ~ RowNo + Label + (RowNo * Label), data = t)
 print(formula(a))
 print(summary(a))
+
+top.1 <- top.1 %>% mutate(Rank=1)
+top.2 <-top.2 %>% mutate(Rank=2)
+top.3 <-top.3 %>% mutate(Rank=3)
+top.4 <-top.4 %>% mutate(Rank=4)
+
+tops <- rbind(top.1, top.2, top.3, top.4)
+tops <- tops %>% gather(Set, Probability, -Rank)
+levels(tops$Set) <- list(TS="tem", Lab="umi", Online="onl")
+tci <- function(x) {t.test(x, na.action=na.omit)$conf.int}
+means <- tops %>% group_by(Set, Rank) %>% summarise(Mean=mean(Probability, na.rm=TRUE), CiLo=tci(Probability)[1], CiUp=tci(Probability)[1])
+
+pd = position_dodge(width=0.5)
+maxlim <- ceiling(max(means$CiUp)*10)/10
+ggplot(data = means, aes(x = Rank, y = Mean, group = Set)) +
+  geom_point(aes(shape=Set, fill=Set, ymax=maxlim), size=4, position=pd) +
+  scale_shape_manual(values=c(24,24, 19)) +
+  scale_fill_manual(values=c("black", "white", "black")) +
+  theme_bw() +
+  theme(plot.title=element_text(face="bold", size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) +
+  ggtitle('Probability of response by rank, correlated across data sets')
+
   
 ```
 
+
+c1 <- cor(top.1, use="complete")
+c2 <- cor(top.2, use="complete")
+c3 <- cor(top.3, use="complete")
+c4 <- cor(top.4, use="complete")
+
+key.cors <- function(x) {
+  rn <- rownames(x)
+  cn <- colnames(x)
+  kc <- c(x[1,2], x[1,3], x[3,2])
+  names(kc) <- c(paste(rn[1], cn[2], sep='-'), paste(rn[1], cn[3], sep='-'), paste(rn[3], cn[2], sep='-'))
+  return(kc)
+}
+
+m1 <- key.cors(c1)
+m2 <- key.cors(c2)
+m3 <- key.cors(c3)
+m4 <- key.cors(c4)
+
+#top.1 <- top.1 %>% mutate(Rank=1)
+#top.2 <-top.2 %>% mutate(Rank=2)
+#top.3 <-top.3 %>% mutate(Rank=3)
+#top.4 <-top.4 %>% mutate(Rank=4)
+
+tops <- rbind(top.1, top.2, top.3, top.4)
+tops <- tops %>% gather(Set, Probability, -Rank)
+levels(tops$Set) <- list(TS="tem", Lab="umi", Online="onl")
+tci <- function(x) {t.test(x, na.action=na.omit)$conf.int}
+
+means <- tops %>% group_by(Set, Rank) %>% summarise(Mean=mean(Probability, na.rm=TRUE), CiLo=tci(Probability)[1], CiUp=tci(Probability)[1])
+
+pd = position_dodge(width=0.5)
+maxlim <- ceiling(max(means$CiUp)*10)/10
+ggplot(data = means, aes(x = Rank, y = Mean, group = Set)) +
+  geom_point(aes(shape=Set, fill=Set, ymax=maxlim), size=4, position=pd) +
+  scale_shape_manual(values=c(24,24, 19)) +
+  scale_fill_manual(values=c("black", "white", "black")) +
+  theme_bw() +
+  theme(plot.title=element_text(face="bold", size=14), panel.grid.major=element_blank(), panel.grid.minor=element_blank()) +
+  ggtitle('Probability of response by rank, correlated across data sets')
 
 [Back to Overview](overview.html)
