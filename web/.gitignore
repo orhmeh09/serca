@@ -1,4 +1,12 @@
-
+*
+!.gitattributes
+!.gitignore
+!.R
+!.Rmd
+!.r
+!.rmd
+*.RData
 *_cache/
 *_files/
 *.html
+new_words.html

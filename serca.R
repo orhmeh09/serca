@@ -15,8 +15,19 @@ set_os_locales <- function() {
   }
 }
 
+omega_sq <- function(aovm){
+  sum_stats <- summary(aovm)[[1]]
+  SSm <- sum_stats[["Sum Sq"]][1]
+  SSr <- sum_stats[["Sum Sq"]][2]
+  DFm <- sum_stats[["Df"]][1]
+  MSr <- sum_stats[["Mean Sq"]][2]
+  W2 <- (SSm-DFm*MSr)/(SSm+SSr+MSr)
+  return(W2)
+}
 
-
+omega_manual <- function(SSm, SSr, DFm, MSr) {
+  (SSm-DFm*MSr)/(SSm+SSr+MSr)
+}
 load_meta <- function(path) {
  tbl_df(read.delim(path, stringsAsFactors = FALSE, fileEncoding = "UTF-8"))
 }
