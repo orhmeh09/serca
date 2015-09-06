@@ -30,7 +30,7 @@ def get_assoc_tries(ipath):
 
     for row in rows:
         target, assoc, n = row['Target'], row['Assoc'], int(row['n'])
-        targets[target][assoc] = n # targets["sofra"]["assoc"] = n
+        targets[target][assoc.lower()] = n # targets["sofra"]["assoc"] = n
     return targets
 
 def get_dups(targets):
@@ -57,14 +57,16 @@ def write_dups(opath, dups):
 
 
         
-    
+ 
 
-ipaths = [os.path.abspath(p) for p in glob.glob('data/frequency/*.txt')]
+#
+#ipaths = [os.path.abspath(p) for p in glob.glob('data/frequency/*.txt')]
+#
+#for ipath in ipaths:
+#    name = os.path.splitext(ipath)[0]
+#    t = get_assoc_tries(ipath)
+#    d = get_dups(t)
+#    opath = 'data/merge candidates/' + os.path.splitext(os.path.basename(ipath))[0] + '_merge_candidates' + '.txt'
+#    write_dups(opath, d)
 
-for ipath in ipaths:
-    name = os.path.splitext(ipath)[0]
-    t = get_assoc_tries(ipath)
-    d = get_dups(t)
-    opath = 'data/merge candidates/' + os.path.splitext(os.path.basename(ipath))[0] + '_merge_candidates' + '.txt'
-    write_dups(opath, d)
-
+f = '/home/altan/code/serca/data/frequencies.txt'

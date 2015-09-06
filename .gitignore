@@ -10,4 +10,8 @@
 !.txt
 !.csv
 !*/
+!data/
 *.html
+.Rproj.user
+!*/*.txt
+

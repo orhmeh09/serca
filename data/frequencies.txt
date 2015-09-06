@@ -3490,7 +3490,6 @@ hüzün	tem	elem	2	7	31	0.02
 hüzün	tem	mutluluk	2	7	31	0.02
 hüzün	tem	yalnızlık	2	7	31	0.02
 hüzün	tem	acı	1	8	27	0.01
-hüzün	tem	acı	1	8	27	0.01
 hüzün	tem	akşam	1	8	27	0.01
 hüzün	tem	aşk	1	8	27	0.01
 hüzün	tem	bahçe	1	8	27	0.01
